@@ -39,8 +39,12 @@ class ServiceCardState extends State<ServiceCard> {
         // height: AppDimensions.normalize(100),
         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
         decoration: BoxDecoration(
+          color: Theme.of(context).brightness == Brightness.dark
+              ? Colors.black
+              : Colors.grey[100], // Light grey for light theme\
+
           // gradient: isHover ? pinkpurple : grayBack,
-          gradient: isHover ? primary : ThemeColor.serviceCard,
+          // gradient: isHover ? primary : ThemeColor.serviceCard,
           borderRadius: BorderRadius.circular(15),
           boxShadow: isHover ? [primaryColorShadow] : [blackColorShadow],
         ),
@@ -59,16 +63,19 @@ class ServiceCardState extends State<ServiceCard> {
             Text(widget.service.name,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: isHover ? whiteColor : ThemeColor.textColor,
-                )),
+                    fontSize: 16,
+                    color: Theme.of(context).brightness == Brightness.dark
+                        ? Colors.white
+                        : Colors.black87,
+                    fontWeight: FontWeight.bold)),
             Space.y(1.w)!,
             Text(
               widget.service.description,
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: isHover
-                    ? whiteColor.withOpacity(0.8)
-                    : ThemeColor.textColor,
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.white
+                    : Colors.black87,
                 fontWeight: FontWeight.w200,
                 fontSize: 13,
               ),
@@ -83,9 +90,10 @@ class ServiceCardState extends State<ServiceCard> {
                               const Text('🛠   '),
                               Text(e,
                                   style: TextStyle(
-                                    color: isHover
-                                        ? whiteColor
-                                        : ThemeColor.textColor,
+                                    color: Theme.of(context).brightness ==
+                                            Brightness.dark
+                                        ? Colors.white
+                                        : Colors.black87,
                                   )),
                             ],
                           ))

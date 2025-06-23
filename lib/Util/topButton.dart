@@ -42,7 +42,11 @@ class _TopButtonState extends State<TopButton> {
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Text(
               widget.label,
-              style: TextStyle(color: ThemeColor.textColor),
+              style: TextStyle(
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.white
+                    : Colors.black,
+              ),
             ),
           ),
         ),
