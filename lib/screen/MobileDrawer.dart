@@ -32,30 +32,33 @@ class _MobileDrawerState extends State<MobileDrawer> {
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Center(child: AppTheme.nameLogo(context)),
-            const Divider(),
+
             ListTile(
+              contentPadding: EdgeInsets.symmetric(horizontal: 30, vertical: 4),
+              visualDensity: VisualDensity(
+                  horizontal: -2, vertical: -2), // makes everything tighter
               leading: Icon(
                 Get.isDarkMode ? Icons.dark_mode_outlined : Icons.light_mode,
-                // color: theme.textColor,
               ),
               title: Text(Get.isDarkMode ? "Light Mode" : "Dark Mode"),
-              trailing: Switch(
-                value: Get.isDarkMode,
-                activeColor: theme.primaryColor,
-                inactiveTrackColor: Colors.grey,
-                onChanged: (newValue) {
-                  if (Get.isDarkMode) {
-                    Get.changeTheme(ThemeColors.lightTheme);
-                  } else {
-                    Get.changeTheme(ThemeColors.darkTheme);
-
-                    // AppTheme.themeData(true, context);
-                  }
-                  setState(() {});
-                },
+              trailing: Transform.scale(
+                scale: 0.75, // 👈 reduce size of the switch
+                child: Switch(
+                  value: Get.isDarkMode,
+                  activeColor: theme.primaryColor,
+                  inactiveTrackColor: Colors.grey,
+                  onChanged: (newValue) {
+                    if (Get.isDarkMode) {
+                      Get.changeTheme(ThemeColors.lightTheme);
+                    } else {
+                      Get.changeTheme(ThemeColors.darkTheme);
+                    }
+                    setState(() {});
+                  },
+                ),
               ),
             ),
-            const Divider(),
+
             ...TopButtonModel.list.asMap().entries.map<Widget>(
                   (MapEntry<int, TopButtonModel> e) => Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -79,13 +82,13 @@ class _MobileDrawerState extends State<MobileDrawer> {
                     ),
                   ),
                 ),
-            Space.y(5.w)!,
-            ColorChageButton(
-              text: 'RESUME',
-              onTap: () {
-                StaticData.openURL(StringTheme.resume);
-              },
-            ),
+            // Space.y(5.w)!,
+            // ColorChageButton(
+            //   text: 'RESUME',
+            //   onTap: () {
+            //     StaticData.openURL(StringTheme.resume);
+            //   },
+            // ),
           ],
         ),
       ),

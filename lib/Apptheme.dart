@@ -13,7 +13,9 @@ class AppTheme {
 
   static Row nameLogo(BuildContext context) {
     var textSty = TextStyle(
-      color: ThemeColor.textColor,
+      color: Theme.of(context).brightness == Brightness.dark
+          ? Colors.white
+          : Colors.black,
       fontWeight: FontWeight.w100,
       fontSize: Responsive.isDesktop(context) ? 32 : 20,
     );

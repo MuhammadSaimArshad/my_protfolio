@@ -21,9 +21,14 @@ class _ImageAnimationsState extends State<ImageAnimations>
     _controller =
         AnimationController(vsync: this, duration: const Duration(seconds: 4));
 
-    sizeAnimation = Tween(begin: 0.0, end: 0.2).animate(CurvedAnimation(
+    sizeAnimation = Tween(begin: 0.0, end: 0.4).animate(
+      // <-- changed from 0.2 to 0.5
+      CurvedAnimation(
         parent: _controller,
-        curve: const Interval(0.40, 0.75, curve: Curves.easeOut)));
+        curve: const Interval(0.40, 0.75, curve: Curves.easeOut),
+      ),
+    );
+
     _controller.forward();
     _controller.addListener(() {
       setState(() {});

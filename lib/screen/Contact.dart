@@ -59,7 +59,9 @@ class _ContactState extends State<Contact> {
                 Container(
                   padding: EdgeInsets.all(width * 0.05).copyWith(bottom: 10),
                   decoration: BoxDecoration(
-                    gradient: ThemeColor.contactCard,
+                    color: Theme.of(context).brightness == Brightness.dark
+                        ? Colors.black
+                        : Colors.grey[500],
                     borderRadius: BorderRadius.circular(30),
                     boxShadow: [blackColorShadow],
                   ),
@@ -123,23 +125,27 @@ class _ContactState extends State<Contact> {
                           color: Colors.white.withOpacity(0.2), height: 1),
                       Space.y(2.w)!,
                       Wrap(
-                          alignment: WrapAlignment.center,
-                          crossAxisAlignment: WrapCrossAlignment.center,
-                          // runSpacing: 12,
-                          children: ContactModel.contactModel
-                              .asMap()
-                              .entries
-                              .map<Widget>((e) => IconButton(
-                                    icon: Image.network(
-                                      e.value.icon,
-                                      color: ThemeColor.textColor,
-                                    ),
-                                    onPressed: () =>
-                                        StaticData.openURL(e.value.url),
-                                    highlightColor: Colors.white54,
-                                    iconSize: 08,
-                                  ))
-                              .toList()),
+                        alignment: WrapAlignment.center,
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: ContactModel.contactModel
+                            .asMap()
+                            .entries
+                            .map<Widget>((e) => IconButton(
+                                  padding: const EdgeInsets.all(4),
+                                  constraints: const BoxConstraints(),
+                                  icon: Image.network(
+                                    e.value.icon,
+                                    color: ThemeColor.textColor,
+                                    width: 20,
+                                    height: 20,
+                                  ),
+                                  onPressed: () =>
+                                      StaticData.openURL(e.value.url),
+                                  highlightColor: Colors.white54,
+                                  iconSize: 18,
+                                ))
+                            .toList(),
+                      )
                     ],
                   ),
                 ),
@@ -166,7 +172,9 @@ class _ContactState extends State<Contact> {
                   "If you want to avail my services you can contact me at the links below.",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: ThemeColor.textColor.withOpacity(0.6),
+                    color: Theme.of(context).brightness == Brightness.dark
+                        ? Colors.grey[200]
+                        : Colors.black,
                     fontSize: Responsive.isDesktop(context)
                         ? 18
                         : Responsive.isTablet(context)
@@ -223,11 +231,16 @@ class _ContactState extends State<Contact> {
                       .map<Widget>((e) => IconButton(
                             icon: Image.network(
                               e.value.icon,
-                              color: ThemeColor.textColor,
+                              width: 20,
+                              height: 20,
+                              color: Theme.of(context).brightness ==
+                                      Brightness.dark
+                                  ? Colors.white
+                                  : Colors.black,
                             ),
                             onPressed: () => StaticData.openURL(e.value.url),
                             highlightColor: Colors.white54,
-                            iconSize: 08,
+                            iconSize: 18,
                           ))
                       .toList()),
               Space.y(5.w)!,

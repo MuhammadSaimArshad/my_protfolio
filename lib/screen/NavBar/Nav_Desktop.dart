@@ -19,7 +19,9 @@ class _NavbarDesktopState extends State<NavbarDesktop> {
 
     return Container(
       padding: EdgeInsets.symmetric(horizontal: size.width / 15, vertical: 10),
-      color: ThemeColor.navBarColor,
+      color: Theme.of(context).brightness == Brightness.dark
+          ? Colors.black
+          : Colors.white,
       child: Row(
         children: [
           AppTheme.nameLogo(context),
@@ -45,7 +47,7 @@ class _NavbarDesktopState extends State<NavbarDesktop> {
                 Get.isDarkMode ? StaticImage.darkIcon : StaticImage.lightIcon,
                 height: 30,
                 width: 30,
-                color: Get.isDarkMode ? Colors.white : Colors.white,
+                color: Get.isDarkMode ? Colors.white : Colors.black,
               )),
         ],
       ),

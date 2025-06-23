@@ -78,24 +78,24 @@ class _HomePageState extends State<HomePage> {
                           ],
                         ),
                         Space.y(1.5.w)!,
-                        Padding(
-                          padding: EdgeInsets.only(right: 10.w),
-                          child: Expanded(
-                            child: Text(StringTheme.miniDescription,
-                                style: TextStyle(
-                                  fontSize: StaticData.isFontSize(context, 20),
-                                  fontWeight: FontWeight.w400,
-                                  color: ThemeColor.textColor.withOpacity(0.6),
-                                )),
-                          ),
-                        ),
+                        // Padding(
+                        //   padding: EdgeInsets.only(right: 10.w),
+                        //   child: Expanded(
+                        //     child: Text(StringTheme.miniDescription,
+                        //         style: TextStyle(
+                        //           fontSize: StaticData.isFontSize(context, 20),
+                        //           fontWeight: FontWeight.w400,
+                        //           color: ThemeColor.textColor.withOpacity(0.6),
+                        //         )),
+                        //   ),
+                        // ),
                         Space.y(3.w)!,
-                        ColorChageButton(
-                          text: StringTheme.download,
-                          onTap: () {
-                            downloadresume();
-                          },
-                        ),
+                        // ColorChageButton(
+                        //   text: StringTheme.download,
+                        //   onTap: () {
+                        //     downloadresume();
+                        //   },
+                        // ),
                       ],
                     ),
                   ),
@@ -111,7 +111,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Positioned(
                       right: 10.w,
-                      bottom: 20.w,
+                      bottom: 5.w,
                       child: const EntranceFader(
                         offset: Offset(0, 0),
                         delay: Duration(seconds: 1),
@@ -170,28 +170,28 @@ class _HomePageState extends State<HomePage> {
                               ],
                             ),
                           ),
-                          Space.y(1.5.w)!,
-                          Padding(
-                            padding: EdgeInsets.only(right: 50.w),
-                            child: Expanded(
-                              child: Text(
-                                StringTheme.miniDescription,
-                                style: TextStyle(
-                                    fontSize:
-                                        StaticData.isFontSize(context, 13),
-                                    fontWeight: FontWeight.w100,
-                                    color:
-                                        ThemeColor.textColor.withOpacity(0.6)),
-                              ),
-                            ),
-                          ),
-                          Space.y(2.w)!,
-                          ColorChageButton(
-                            text: StringTheme.download,
-                            onTap: () {
-                              downloadresume();
-                            },
-                          ),
+                          // Space.y(1.5.w)!,
+                          // Padding(
+                          //   padding: EdgeInsets.only(right: 50.w),
+                          //   child: Expanded(
+                          //     child: Text(
+                          //       StringTheme.miniDescription,
+                          //       style: TextStyle(
+                          //           fontSize:
+                          //               StaticData.isFontSize(context, 13),
+                          //           fontWeight: FontWeight.w100,
+                          //           color:
+                          //               ThemeColor.textColor.withOpacity(0.6)),
+                          //     ),
+                          //   ),
+                          // ),
+                          // Space.y(2.w)!,
+                          // ColorChageButton(
+                          //   text: StringTheme.download,
+                          //   onTap: () {
+                          //     downloadresume();
+                          //   },
+                          // ),
                         ],
                       ),
                     ),
@@ -245,14 +245,14 @@ class _HomePageState extends State<HomePage> {
 
                     Space.y(2.w)!,
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        ColorChageButton(
-                          text: StringTheme.download,
-                          onTap: () {
-                            downloadresume();
-                          },
-                        ),
+                        // ColorChageButton(
+                        //   text: StringTheme.download,
+                        //   onTap: () {
+                        //     downloadresume();
+                        //   },
+                        // ),
                         const EntranceFader(
                           offset: Offset(0, 0),
                           delay: Duration(seconds: 1),

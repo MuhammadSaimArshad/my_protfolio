@@ -13,7 +13,7 @@ class TopButtonModel {
       icon: Icons.home,
     ),
     TopButtonModel(
-      name: 'SERVICES',
+      name: 'About',
       icon: Icons.work,
     ),
     TopButtonModel(
