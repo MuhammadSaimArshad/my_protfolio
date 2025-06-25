@@ -16,16 +16,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     theme = Theme.of(context);
-    return Sizer(
-      builder: (context, orientation, deviceType) {
-        return GetMaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Saim',
-          theme: AppTheme.themeData(false, context),
-          darkTheme: AppTheme.themeData(true, context),
-          home: const BG(),
-        );
-      },
+    return SafeArea(
+      child: Sizer(
+        builder: (context, orientation, deviceType) {
+          return GetMaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Saim',
+            theme: AppTheme.themeData(false, context),
+            darkTheme: AppTheme.themeData(true, context),
+            home: const BG(),
+          );
+        },
+      ),
     );
   }
 }
