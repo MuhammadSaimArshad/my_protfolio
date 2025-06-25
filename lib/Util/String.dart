@@ -40,7 +40,7 @@ class StringTheme {
   // static String a = "A ";
   static String download = 'download cv';
 
-  static String animationtxt1 = " Software Engineer";
+  static String animationtxt1 = " Software Engineering";
   static String animationtxt2 = " Mobile App Developer";
   static String animationtxt3 = " Web Developer";
 

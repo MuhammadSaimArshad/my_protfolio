@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart' show GoogleFonts;
 import 'package:my_protfolio/Util/colorChangebuttom.dart';
 import 'package:my_protfolio/screen/home.dart';
 import 'package:sizer/sizer.dart';
@@ -23,7 +24,8 @@ class _ServicesState extends State<Services> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-
+    const greenColor = Color(0xFF4EFFA5);
+    const bgColor = Color(0xFF1D1E22);
     return Container(
         padding: EdgeInsets.symmetric(horizontal: width / 9.9)
             .copyWith(bottom: height * 0.2),
@@ -37,38 +39,38 @@ class _ServicesState extends State<Services> {
                   Expanded(
                     flex: 1,
                     child: Wrap(
-                      spacing: 30,
-                      runSpacing: 30,
+                      spacing: 20,
+                      runSpacing: 20,
                       children: [
                         ClipRRect(
                           borderRadius: BorderRadius.circular(
                               12), // 👈 set your desired radius
                           child: Image.asset('assets/imgs/imag1.jpeg',
-                              width: 120, height: 150, fit: BoxFit.contain),
+                              width: 130, height: 190, fit: BoxFit.cover),
                         ),
                         ClipRRect(
                           borderRadius: BorderRadius.circular(
                               12), // 👈 set your desired radius
                           child: Image.asset('assets/imgs/img 2.jpeg',
-                              width: 250, height: 150, fit: BoxFit.cover),
+                              width: 250, height: 190, fit: BoxFit.cover),
                         ),
                         ClipRRect(
                           borderRadius: BorderRadius.circular(
                               12), // 👈 set your desired radius
                           child: Image.asset('assets/imgs/imag 3.jpeg',
-                              width: 250, height: 150, fit: BoxFit.cover),
+                              width: 270, height: 190, fit: BoxFit.cover),
                         ),
                         ClipRRect(
                           borderRadius: BorderRadius.circular(
                               12), // 👈 set your desired radius
                           child: Image.asset('assets/imgs/imag 4.jpeg',
-                              width: 120, height: 150, fit: BoxFit.contain),
+                              width: 140, height: 190, fit: BoxFit.cover),
                         ),
                         ClipRRect(
                           borderRadius: BorderRadius.circular(
                               12), // 👈 set your desired radius
                           child: Image.asset('assets/imgs/imag 5.jpeg',
-                              width: 290, height: 150, fit: BoxFit.cover),
+                              width: 410, height: 190, fit: BoxFit.cover),
                         ),
                       ],
                     ),
@@ -214,6 +216,420 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
                   ),
                 ],
               ),
+              SizedBox(height: 30),
+              Container(
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? bgColor
+                    : Colors.white,
+                // color: bgColor,
+                padding: const EdgeInsets.symmetric(vertical: 60),
+                width: double.infinity,
+                child: Column(
+                  children: [
+                    // Heading
+                    Text(
+                      "Experience",
+                      style: GoogleFonts.inter(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w700,
+                        color: greenColor,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      "Reflection of what I’ve been doing so far, so long.",
+                      style: GoogleFonts.inter(
+                        fontSize: 14,
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? Colors.white70
+                            : Colors.grey,
+                      ),
+                    ),
+                    const SizedBox(height: 50),
+
+                    // Experience Card
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 30),
+                      padding: const EdgeInsets.all(30),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? const Color(0xFF25262B)
+                            : Colors.grey[400],
+                        // color: const Color(0xFF25262B),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // LEFT SIDE
+                          Expanded(
+                            flex: 3,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "7 Skies Solution",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w700,
+                                    color: greenColor,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  "Flutter Developer",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 14,
+                                    color: Colors.white70,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  "Feb 2023 - Sep 2024",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 14,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                const SizedBox(height: 20),
+                                Text(
+                                  "Technologies",
+                                  style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 15,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                const SizedBox(height: 10),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: const [
+                                    TechBullet("Flutter"),
+                                    TechBullet("Dart"),
+                                    TechBullet("Firebase"),
+                                    TechBullet("REST APIs"),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          const SizedBox(width: 30),
+
+                          // RIGHT SIDE
+                          Expanded(
+                            flex: 5,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                RoleBullet(
+                                    "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases"),
+                                RoleBullet(
+                                    "Integrated payment gateways into flutter app with REST APIs"),
+                                RoleBullet(
+                                    "Handled local packages to maintain custom components and to maintain API architecture"),
+                                RoleBullet(
+                                    "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer"),
+                                RoleBullet("Learned GitHub actions for CI/CD"),
+                                RoleBullet(
+                                    "Worked with various env. flavors in flutter app (dev, qa, stage, prod)"),
+                                RoleBullet(
+                                    "Integration of REST APIs, Firebase and local cached concepts for better user experience"),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    // Experience Card
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 30),
+                      padding: const EdgeInsets.all(30),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? const Color(0xFF25262B)
+                            : Colors.grey[400],
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // LEFT SIDE
+                          Expanded(
+                            flex: 3,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Hisley Tech",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w700,
+                                    color: greenColor,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  "Flutter Developer",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 14,
+                                    color: Colors.white70,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  "Sep 2024- Oct 2024",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 14,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                const SizedBox(height: 20),
+                                Text(
+                                  "Technologies",
+                                  style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 15,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                const SizedBox(height: 10),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: const [
+                                    TechBullet("Flutter"),
+                                    TechBullet("Dart"),
+                                    TechBullet("Firebase"),
+                                    TechBullet("REST APIs"),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          const SizedBox(width: 30),
+
+                          // RIGHT SIDE
+                          Expanded(
+                            flex: 5,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                RoleBullet(
+                                    "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases"),
+                                RoleBullet(
+                                    "Integrated payment gateways into flutter app with REST APIs"),
+                                RoleBullet(
+                                    "Handled local packages to maintain custom components and to maintain API architecture"),
+                                RoleBullet(
+                                    "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer"),
+                                RoleBullet("Learned GitHub actions for CI/CD"),
+                                RoleBullet(
+                                    "Worked with various env. flavors in flutter app (dev, qa, stage, prod)"),
+                                RoleBullet(
+                                    "Integration of REST APIs, Firebase and local cached concepts for better user experience"),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    // Experience Card
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 30),
+                      padding: const EdgeInsets.all(30),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? const Color(0xFF25262B)
+                            : Colors.grey[400],
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // LEFT SIDE
+                          Expanded(
+                            flex: 3,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "IT Solera",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w700,
+                                    color: greenColor,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  "Flutter Developer",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 14,
+                                    color: Colors.white70,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  "Oct 2024- Nov 2024",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 14,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                const SizedBox(height: 20),
+                                Text(
+                                  "Technologies",
+                                  style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 15,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                const SizedBox(height: 10),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: const [
+                                    TechBullet("Flutter"),
+                                    TechBullet("Dart"),
+                                    TechBullet("Firebase"),
+                                    TechBullet("REST APIs"),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          const SizedBox(width: 30),
+
+                          // RIGHT SIDE
+                          Expanded(
+                            flex: 5,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                RoleBullet(
+                                    "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases"),
+                                RoleBullet(
+                                    "Integrated payment gateways into flutter app with REST APIs"),
+                                RoleBullet(
+                                    "Handled local packages to maintain custom components and to maintain API architecture"),
+                                RoleBullet(
+                                    "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer"),
+                                RoleBullet("Learned GitHub actions for CI/CD"),
+                                RoleBullet(
+                                    "Worked with various env. flavors in flutter app (dev, qa, stage, prod)"),
+                                RoleBullet(
+                                    "Integration of REST APIs, Firebase and local cached concepts for better user experience"),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    // Experience Card
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 30),
+                      padding: const EdgeInsets.all(30),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? const Color(0xFF25262B)
+                            : Colors.grey[400],
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // LEFT SIDE
+                          Expanded(
+                            flex: 3,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Green Professsional Technologies",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w700,
+                                    color: greenColor,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  "Flutter Developer",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 14,
+                                    color: Colors.white70,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  "Present",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 14,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                const SizedBox(height: 20),
+                                Text(
+                                  "Technologies",
+                                  style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 15,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                const SizedBox(height: 10),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: const [
+                                    TechBullet("Flutter"),
+                                    TechBullet("Dart"),
+                                    TechBullet("Firebase"),
+                                    TechBullet("REST APIs"),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          const SizedBox(width: 30),
+
+                          // RIGHT SIDE
+                          Expanded(
+                            flex: 5,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                RoleBullet(
+                                    "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases"),
+                                RoleBullet(
+                                    "Integrated payment gateways into flutter app with REST APIs"),
+                                RoleBullet(
+                                    "Handled local packages to maintain custom components and to maintain API architecture"),
+                                RoleBullet(
+                                    "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer"),
+                                RoleBullet("Learned GitHub actions for CI/CD"),
+                                RoleBullet(
+                                    "Worked with various env. flavors in flutter app (dev, qa, stage, prod)"),
+                                RoleBullet(
+                                    "Integration of REST APIs, Firebase and local cached concepts for better user experience"),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              )
             ],
           ),
           tablet: Column(
@@ -225,44 +641,44 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
                 height: 190,
                 width: double.infinity,
                 child: Wrap(
-                  spacing: 30,
-                  runSpacing: 30,
+                  spacing: 20,
+                  runSpacing: 20,
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(
                           12), // 👈 set your desired radius
                       child: Image.asset('assets/imgs/imag1.jpeg',
-                          width: 150, height: 150, fit: BoxFit.contain),
+                          width: 130, height: 190, fit: BoxFit.cover),
                     ),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(
                           12), // 👈 set your desired radius
                       child: Image.asset('assets/imgs/img 2.jpeg',
-                          width: 150, height: 150, fit: BoxFit.cover),
+                          width: 250, height: 190, fit: BoxFit.cover),
                     ),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(
                           12), // 👈 set your desired radius
                       child: Image.asset('assets/imgs/imag 3.jpeg',
-                          width: 90, height: 150, fit: BoxFit.cover),
+                          width: 270, height: 190, fit: BoxFit.cover),
                     ),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(
                           12), // 👈 set your desired radius
                       child: Image.asset('assets/imgs/imag 4.jpeg',
-                          width: 90, height: 150, fit: BoxFit.contain),
+                          width: 140, height: 190, fit: BoxFit.cover),
                     ),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(
                           12), // 👈 set your desired radius
                       child: Image.asset('assets/imgs/imag 5.jpeg',
-                          width: 90, height: 150, fit: BoxFit.cover),
+                          width: 290, height: 190, fit: BoxFit.cover),
                     ),
                   ],
                 ),
               ),
               SizedBox(
-                height: 190,
+                height: 420,
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -407,6 +823,417 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
                   ),
                 ],
               ),
+              Container(
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? bgColor
+                    : Colors.white,
+                padding: const EdgeInsets.symmetric(vertical: 60),
+                width: double.infinity,
+                child: Column(
+                  children: [
+                    // Heading
+                    Text(
+                      "Experience",
+                      style: GoogleFonts.inter(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w700,
+                        color: greenColor,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      "Reflection of what I’ve been doing so far, so long.",
+                      style: GoogleFonts.inter(
+                        fontSize: 14,
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? Colors.white70
+                            : Colors.grey,
+                      ),
+                    ),
+                    const SizedBox(height: 50),
+
+                    // Experience Card
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 30),
+                      padding: const EdgeInsets.all(30),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? const Color(0xFF25262B)
+                            : Colors.grey[400],
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // LEFT SIDE
+                          Expanded(
+                            flex: 3,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "7 Skies Solution",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w700,
+                                    color: greenColor,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  "Flutter Developer",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 14,
+                                    color: Colors.white70,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  "Feb 2023 - Sep 2024",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 14,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                const SizedBox(height: 20),
+                                Text(
+                                  "Technologies",
+                                  style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 15,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                const SizedBox(height: 10),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: const [
+                                    TechBullet("Flutter"),
+                                    TechBullet("Dart"),
+                                    TechBullet("Firebase"),
+                                    TechBullet("REST APIs"),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          const SizedBox(width: 30),
+
+                          // RIGHT SIDE
+                          Expanded(
+                            flex: 5,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                RoleBullet(
+                                    "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases"),
+                                RoleBullet(
+                                    "Integrated payment gateways into flutter app with REST APIs"),
+                                RoleBullet(
+                                    "Handled local packages to maintain custom components and to maintain API architecture"),
+                                RoleBullet(
+                                    "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer"),
+                                RoleBullet("Learned GitHub actions for CI/CD"),
+                                RoleBullet(
+                                    "Worked with various env. flavors in flutter app (dev, qa, stage, prod)"),
+                                RoleBullet(
+                                    "Integration of REST APIs, Firebase and local cached concepts for better user experience"),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    // Experience Card
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 30),
+                      padding: const EdgeInsets.all(30),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? const Color(0xFF25262B)
+                            : Colors.grey[400],
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // LEFT SIDE
+                          Expanded(
+                            flex: 3,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Hisley Tech",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w700,
+                                    color: greenColor,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  "Flutter Developer",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 14,
+                                    color: Colors.white70,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  "Sep 2024- Oct 2024",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 14,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                const SizedBox(height: 20),
+                                Text(
+                                  "Technologies",
+                                  style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 15,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                const SizedBox(height: 10),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: const [
+                                    TechBullet("Flutter"),
+                                    TechBullet("Dart"),
+                                    TechBullet("Firebase"),
+                                    TechBullet("REST APIs"),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          const SizedBox(width: 30),
+
+                          // RIGHT SIDE
+                          Expanded(
+                            flex: 5,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                RoleBullet(
+                                    "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases"),
+                                RoleBullet(
+                                    "Integrated payment gateways into flutter app with REST APIs"),
+                                RoleBullet(
+                                    "Handled local packages to maintain custom components and to maintain API architecture"),
+                                RoleBullet(
+                                    "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer"),
+                                RoleBullet("Learned GitHub actions for CI/CD"),
+                                RoleBullet(
+                                    "Worked with various env. flavors in flutter app (dev, qa, stage, prod)"),
+                                RoleBullet(
+                                    "Integration of REST APIs, Firebase and local cached concepts for better user experience"),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    // Experience Card
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 30),
+                      padding: const EdgeInsets.all(30),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? const Color(0xFF25262B)
+                            : Colors.grey[400],
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // LEFT SIDE
+                          Expanded(
+                            flex: 3,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "IT Solera",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w700,
+                                    color: greenColor,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  "Flutter Developer",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 14,
+                                    color: Colors.white70,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  "Oct 2024- Nov 2024",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 14,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                const SizedBox(height: 20),
+                                Text(
+                                  "Technologies",
+                                  style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 15,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                const SizedBox(height: 10),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: const [
+                                    TechBullet("Flutter"),
+                                    TechBullet("Dart"),
+                                    TechBullet("Firebase"),
+                                    TechBullet("REST APIs"),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          const SizedBox(width: 30),
+
+                          // RIGHT SIDE
+                          Expanded(
+                            flex: 5,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                RoleBullet(
+                                    "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases"),
+                                RoleBullet(
+                                    "Integrated payment gateways into flutter app with REST APIs"),
+                                RoleBullet(
+                                    "Handled local packages to maintain custom components and to maintain API architecture"),
+                                RoleBullet(
+                                    "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer"),
+                                RoleBullet("Learned GitHub actions for CI/CD"),
+                                RoleBullet(
+                                    "Worked with various env. flavors in flutter app (dev, qa, stage, prod)"),
+                                RoleBullet(
+                                    "Integration of REST APIs, Firebase and local cached concepts for better user experience"),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    // Experience Card
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.all(30),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? const Color(0xFF25262B)
+                            : Colors.grey[400],
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // LEFT SIDE
+                          Expanded(
+                            flex: 3,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Green Professsional Technologies",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w700,
+                                    color: greenColor,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  "Flutter Developer",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 14,
+                                    color: Colors.white70,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  "Present",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 14,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                const SizedBox(height: 20),
+                                Text(
+                                  "Technologies",
+                                  style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 15,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                const SizedBox(height: 10),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: const [
+                                    TechBullet("Flutter"),
+                                    TechBullet("Dart"),
+                                    TechBullet("Firebase"),
+                                    TechBullet("REST APIs"),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          const SizedBox(width: 30),
+
+                          // RIGHT SIDE
+                          Expanded(
+                            flex: 5,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                RoleBullet(
+                                    "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases"),
+                                RoleBullet(
+                                    "Integrated payment gateways into flutter app with REST APIs"),
+                                RoleBullet(
+                                    "Handled local packages to maintain custom components and to maintain API architecture"),
+                                RoleBullet(
+                                    "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer"),
+                                RoleBullet("Learned GitHub actions for CI/CD"),
+                                RoleBullet(
+                                    "Worked with various env. flavors in flutter app (dev, qa, stage, prod)"),
+                                RoleBullet(
+                                    "Integration of REST APIs, Firebase and local cached concepts for better user experience"),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              )
             ],
           ),
           mobile: Column(children: [
@@ -414,41 +1241,41 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
               height: 30,
             ),
             Container(
-              height: 190,
+              height: 370,
               width: double.infinity,
               child: Wrap(
-                spacing: 30,
-                runSpacing: 30,
+                spacing: 10,
+                runSpacing: 10,
                 children: [
                   ClipRRect(
                     borderRadius:
                         BorderRadius.circular(12), // 👈 set your desired radius
                     child: Image.asset('assets/imgs/imag1.jpeg',
-                        width: 150, height: 150, fit: BoxFit.contain),
+                        width: 160, height: 190, fit: BoxFit.cover),
                   ),
                   ClipRRect(
                     borderRadius:
                         BorderRadius.circular(12), // 👈 set your desired radius
                     child: Image.asset('assets/imgs/img 2.jpeg',
-                        width: 150, height: 150, fit: BoxFit.cover),
+                        width: 160, height: 190, fit: BoxFit.cover),
                   ),
                   ClipRRect(
                     borderRadius:
                         BorderRadius.circular(12), // 👈 set your desired radius
                     child: Image.asset('assets/imgs/imag 3.jpeg',
-                        width: 90, height: 150, fit: BoxFit.cover),
+                        width: 120, height: 170, fit: BoxFit.cover),
                   ),
                   ClipRRect(
                     borderRadius:
                         BorderRadius.circular(12), // 👈 set your desired radius
                     child: Image.asset('assets/imgs/imag 4.jpeg',
-                        width: 90, height: 150, fit: BoxFit.contain),
+                        width: 120, height: 170, fit: BoxFit.cover),
                   ),
                   ClipRRect(
                     borderRadius:
                         BorderRadius.circular(12), // 👈 set your desired radius
                     child: Image.asset('assets/imgs/imag 5.jpeg',
-                        width: 90, height: 150, fit: BoxFit.cover),
+                        width: 320, height: 170, fit: BoxFit.cover),
                   ),
                 ],
               ),
@@ -593,7 +1420,418 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
                       ],
                     ),
                   ),
-                ])
+                ]),
+            Container(
+              color: Theme.of(context).brightness == Brightness.dark
+                  ? bgColor
+                  : Colors.white,
+              padding: const EdgeInsets.symmetric(vertical: 60),
+              width: double.infinity,
+              child: Column(
+                children: [
+                  // Heading
+                  Text(
+                    "Experience",
+                    style: GoogleFonts.inter(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w700,
+                      color: greenColor,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    "Reflection of what I’ve been doing so far, so long.",
+                    style: GoogleFonts.inter(
+                      fontSize: 14,
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white70
+                          : Colors.grey,
+                    ),
+                  ),
+                  const SizedBox(height: 50),
+
+                  // Experience Card
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.all(30),
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? const Color(0xFF25262B)
+                          : Colors.grey[400],
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // LEFT SIDE
+                        Expanded(
+                          flex: 3,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "7 Skies Solution",
+                                style: GoogleFonts.inter(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w700,
+                                  color: greenColor,
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                "Flutter Developer",
+                                style: GoogleFonts.inter(
+                                  fontSize: 14,
+                                  color: Colors.white70,
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                "Feb 2023 - Sep 2024",
+                                style: GoogleFonts.inter(
+                                  fontSize: 14,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              const SizedBox(height: 20),
+                              Text(
+                                "Technologies",
+                                style: GoogleFonts.inter(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 13,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              const SizedBox(height: 10),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const [
+                                  TechBullet("Flutter"),
+                                  TechBullet("Dart"),
+                                  TechBullet("Firebase"),
+                                  TechBullet("REST APIs"),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+
+                        const SizedBox(width: 30),
+
+                        // RIGHT SIDE
+                        Expanded(
+                          flex: 5,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const [
+                              RoleBullet(
+                                  "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases"),
+                              RoleBullet(
+                                  "Integrated payment gateways into flutter app with REST APIs"),
+                              RoleBullet(
+                                  "Handled local packages to maintain custom components and to maintain API architecture"),
+                              RoleBullet(
+                                  "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer"),
+                              RoleBullet("Learned GitHub actions for CI/CD"),
+                              RoleBullet(
+                                  "Worked with various env. flavors in flutter app (dev, qa, stage, prod)"),
+                              RoleBullet(
+                                  "Integration of REST APIs, Firebase and local cached concepts for better user experience"),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  // Experience Card
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 30),
+                    padding: const EdgeInsets.all(30),
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? const Color(0xFF25262B)
+                          : Colors.grey[400],
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // LEFT SIDE
+                        Expanded(
+                          flex: 3,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Hisley Tech",
+                                style: GoogleFonts.inter(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w700,
+                                  color: greenColor,
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                "Flutter Developer",
+                                style: GoogleFonts.inter(
+                                  fontSize: 14,
+                                  color: Colors.white70,
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                "Sep 2024- Oct 2024",
+                                style: GoogleFonts.inter(
+                                  fontSize: 14,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              const SizedBox(height: 20),
+                              Text(
+                                "Technologies",
+                                style: GoogleFonts.inter(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 13,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              const SizedBox(height: 10),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const [
+                                  TechBullet("Flutter"),
+                                  TechBullet("Dart"),
+                                  TechBullet("Firebase"),
+                                  TechBullet("REST APIs"),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+
+                        const SizedBox(width: 30),
+
+                        // RIGHT SIDE
+                        Expanded(
+                          flex: 5,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const [
+                              RoleBullet(
+                                  "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases"),
+                              RoleBullet(
+                                  "Integrated payment gateways into flutter app with REST APIs"),
+                              RoleBullet(
+                                  "Handled local packages to maintain custom components and to maintain API architecture"),
+                              RoleBullet(
+                                  "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer"),
+                              RoleBullet("Learned GitHub actions for CI/CD"),
+                              RoleBullet(
+                                  "Worked with various env. flavors in flutter app (dev, qa, stage, prod)"),
+                              RoleBullet(
+                                  "Integration of REST APIs, Firebase and local cached concepts for better user experience"),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  // Experience Card
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 30),
+                    padding: const EdgeInsets.all(30),
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? const Color(0xFF25262B)
+                          : Colors.grey[400],
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // LEFT SIDE
+                        Expanded(
+                          flex: 3,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "IT Solera",
+                                style: GoogleFonts.inter(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w700,
+                                  color: greenColor,
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                "Flutter Developer",
+                                style: GoogleFonts.inter(
+                                  fontSize: 14,
+                                  color: Colors.white70,
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                "Oct 2024- Nov 2024",
+                                style: GoogleFonts.inter(
+                                  fontSize: 14,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              const SizedBox(height: 20),
+                              Text(
+                                "Technologies",
+                                style: GoogleFonts.inter(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 13,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              const SizedBox(height: 10),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const [
+                                  TechBullet("Flutter"),
+                                  TechBullet("Dart"),
+                                  TechBullet("Firebase"),
+                                  TechBullet("REST APIs"),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+
+                        const SizedBox(width: 30),
+
+                        // RIGHT SIDE
+                        Expanded(
+                          flex: 5,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const [
+                              RoleBullet(
+                                  "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases"),
+                              RoleBullet(
+                                  "Integrated payment gateways into flutter app with REST APIs"),
+                              RoleBullet(
+                                  "Handled local packages to maintain custom components and to maintain API architecture"),
+                              RoleBullet(
+                                  "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer"),
+                              RoleBullet("Learned GitHub actions for CI/CD"),
+                              RoleBullet(
+                                  "Worked with various env. flavors in flutter app (dev, qa, stage, prod)"),
+                              RoleBullet(
+                                  "Integration of REST APIs, Firebase and local cached concepts for better user experience"),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  // Experience Card
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 30),
+                    padding: const EdgeInsets.all(30),
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? const Color(0xFF25262B)
+                          : Colors.grey[400],
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // LEFT SIDE
+                        Expanded(
+                          flex: 3,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Green\nTech",
+                                style: GoogleFonts.inter(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w700,
+                                  color: greenColor,
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                "Flutter Developer",
+                                style: GoogleFonts.inter(
+                                  fontSize: 14,
+                                  color: Colors.white70,
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                "Present",
+                                style: GoogleFonts.inter(
+                                  fontSize: 14,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              const SizedBox(height: 20),
+                              Text(
+                                "Technologies",
+                                style: GoogleFonts.inter(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 13,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              const SizedBox(height: 10),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const [
+                                  TechBullet("Flutter"),
+                                  TechBullet("Dart"),
+                                  TechBullet("Firebase"),
+                                  TechBullet("REST APIs"),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+
+                        const SizedBox(width: 30),
+
+                        // RIGHT SIDE
+                        Expanded(
+                          flex: 5,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const [
+                              RoleBullet(
+                                  "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases"),
+                              RoleBullet(
+                                  "Integrated payment gateways into flutter app with REST APIs"),
+                              RoleBullet(
+                                  "Handled local packages to maintain custom components and to maintain API architecture"),
+                              RoleBullet(
+                                  "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer"),
+                              RoleBullet("Learned GitHub actions for CI/CD"),
+                              RoleBullet(
+                                  "Worked with various env. flavors in flutter app (dev, qa, stage, prod)"),
+                              RoleBullet(
+                                  "Integration of REST APIs, Firebase and local cached concepts for better user experience"),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            )
           ]),
         ));
   }
@@ -632,6 +1870,53 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
           Icon(icon, size: 16, color: Colors.black),
           const SizedBox(width: 6),
           Text(label, style: const TextStyle(color: Colors.black)),
+        ],
+      ),
+    );
+  }
+}
+
+class TechBullet extends StatelessWidget {
+  final String text;
+  const TechBullet(this.text, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 6),
+      child: Row(
+        children: [
+          const Text("• ", style: TextStyle(color: Colors.white)),
+          Expanded(
+            child: Text(
+              text,
+              style: GoogleFonts.inter(color: Colors.white, fontSize: 13),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class RoleBullet extends StatelessWidget {
+  final String text;
+  const RoleBullet(this.text, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text("• ", style: TextStyle(color: Colors.white)),
+          Expanded(
+            child: Text(
+              text,
+              style: GoogleFonts.inter(color: Colors.white, fontSize: 13),
+            ),
+          ),
         ],
       ),
     );

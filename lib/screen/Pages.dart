@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_protfolio/screen/Footer.dart';
 
 import 'Contact.dart';
 import 'home.dart';
@@ -12,6 +11,5 @@ class PagesList {
     const Services(),
     const Projects(),
     const Contact(),
-    const Footer(),
   ];
 }
