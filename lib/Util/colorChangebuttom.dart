@@ -26,7 +26,11 @@ class _ColorChageButtonState extends State<ColorChageButton> {
                   height: 65,
                   width: 250,
                   decoration: BoxDecoration(
-                    border: Border.all(color: ThemeColor.textColor, width: 3),
+                    border: Border.all(
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? Colors.white
+                            : Colors.black,
+                        width: 3),
                     borderRadius: BorderRadius.circular(6),
                   ),
                 ),
@@ -57,7 +61,9 @@ class _ColorChageButtonState extends State<ColorChageButton> {
                     child: Text(
                       widget.text.toUpperCase(),
                       style: TextStyle(
-                        color: isHover ? whiteColor : ThemeColor.textColor,
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? Colors.white
+                            : Colors.black,
                         fontSize: 18,
                       ),
                     ),

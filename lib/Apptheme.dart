@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:my_protfolio/Util/String.dart';
 import 'package:my_protfolio/Util/responsive.dart';
 
@@ -12,7 +13,7 @@ class AppTheme {
   }
 
   static Row nameLogo(BuildContext context) {
-    var textSty = TextStyle(
+    var textSty = GoogleFonts.stylish(
       color: Theme.of(context).brightness == Brightness.dark
           ? Colors.white
           : Colors.black,

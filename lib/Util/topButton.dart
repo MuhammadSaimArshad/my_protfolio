@@ -43,6 +43,7 @@ class _TopButtonState extends State<TopButton> {
             child: Text(
               widget.label,
               style: TextStyle(
+                fontSize: 16,
                 color: Theme.of(context).brightness == Brightness.dark
                     ? Colors.white
                     : Colors.black,

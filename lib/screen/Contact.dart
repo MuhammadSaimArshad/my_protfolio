@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart' show GoogleFonts;
 import 'package:sizer/sizer.dart';
 
 import '../Apptheme.dart';
@@ -23,229 +24,555 @@ class _ContactState extends State<Contact> {
   Widget build(BuildContext context) {
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
-
-    return Responsive.isDesktop(context)
-        ? Container(
-            // padding: Space.all(1, 1),
-            // padding: EdgeInsets.symmetric(horizontal: AppDimensions.normalize(30)),
-            padding: EdgeInsets.symmetric(horizontal: width / 8),
+    const greenColor = Color(0xFF4EFFA5);
+    const bgColor = Color(0xFF1D1E22);
+    return Container(
+        padding: EdgeInsets.symmetric(horizontal: width / 9.9)
+            .copyWith(bottom: height * 0.2),
+        child: Responsive(
+          desktop: SingleChildScrollView(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
               children: [
-                Text(
-                  "\nGet in Touch",
-                  style: TextStyle(
-                      fontSize: Responsive.isDesktop(context)
-                          ? 56
-                          : Responsive.isTablet(context)
-                              ? 36
-                              : 26),
+                SizedBox(
+                  height: 30,
                 ),
+                Text("Get in touch",
+                    style: GoogleFonts.inter(
+                      color: greenColor,
+                      fontSize: 24,
+                      fontWeight: FontWeight.w700,
+                    )),
+                const SizedBox(height: 6),
+                Text("Let's build something together :)",
+                    style: GoogleFonts.inter(
+                      color: Colors.white70,
+                      fontSize: 14,
+                    )),
+                const SizedBox(height: 40),
 
-                Space.y(1.w)!,
-                Text(
-                  "If you want to avail my services you can contact me at the links below.",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: ThemeColor.textColor.withOpacity(0.6),
-                    fontSize: Responsive.isDesktop(context)
-                        ? 18
-                        : Responsive.isTablet(context)
-                            ? 16
-                            : 13,
-                  ),
-                ),
-
-                Space.y(2.w)!,
-                Container(
-                  padding: EdgeInsets.all(width * 0.05).copyWith(bottom: 10),
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).brightness == Brightness.dark
-                        ? Colors.black
-                        : Colors.grey[500],
-                    borderRadius: BorderRadius.circular(30),
-                    boxShadow: [blackColorShadow],
-                  ),
-                  child: Column(
-                    // crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                StringTheme.contactHeadding,
-                                style: TextStyle(
-                                  height: 1.2,
-                                  fontSize: 18.sp,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-
-                              Space.y(1.w)!,
-                              Text(
-                                StringTheme.contactSubHeadding,
-                                style: const TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w100,
-                                ),
-                              ),
-                              Space.y(2.w)!,
-                              // SizedBox(height: AppDimensions.space(3)),
-                            ],
+                // Date Card and Contact Info
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // Date Card
+                    Column(
+                      children: [
+                        Container(
+                          width: 160,
+                          decoration: BoxDecoration(
+                            color: greenColor,
+                            borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(8),
+                                topRight: Radius.circular(8)),
                           ),
-                          InkWell(
-                            onTap: () =>
-                                StaticData.openURL(StringTheme.whatsapp),
-                            child: Container(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 5, horizontal: 20),
-                              decoration: BoxDecoration(
-                                  color: Color(0xFF09FBD4),
-
-                                  // gradient: primary,
-                                  // border: Border.all(
-                                  //     width: 2.0, color: theme.primaryColor),
-                                  borderRadius: BorderRadius.circular(10)),
-                              child: const Text(
-                                'Get Started',
-                                style: TextStyle(
+                          padding: const EdgeInsets.all(12),
+                          child: Center(
+                            child: Text(
+                              "June",
+                              style: GoogleFonts.inter(
                                   fontSize: 18,
-                                  fontWeight: FontWeight.w500,
-                                  color: textColor,
-                                ),
-                              ),
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.black),
                             ),
                           ),
-                        ],
-                      ),
-                      Container(
-                          color: Colors.white.withOpacity(0.2), height: 1),
-                      Space.y(2.w)!,
-                      Wrap(
-                        alignment: WrapAlignment.center,
-                        crossAxisAlignment: WrapCrossAlignment.center,
-                        children: ContactModel.contactModel
-                            .asMap()
-                            .entries
-                            .map<Widget>((e) => IconButton(
-                                  padding: const EdgeInsets.all(4),
-                                  constraints: const BoxConstraints(),
-                                  icon: Image.network(
-                                    e.value.icon,
-                                    color: ThemeColor.textColor,
-                                    width: 20,
-                                    height: 20,
-                                  ),
-                                  onPressed: () =>
-                                      StaticData.openURL(e.value.url),
-                                  highlightColor: Colors.white54,
-                                  iconSize: 18,
-                                ))
-                            .toList(),
-                      )
-                    ],
-                  ),
-                ),
-                // Space.y!,
-              ],
-            ),
-          )
-        : Column(
-            children: [
-              Space.y(10.w)!,
-              Text(
-                "\nGet in Touch",
-                style: TextStyle(
-                    fontSize: Responsive.isDesktop(context)
-                        ? 56
-                        : Responsive.isTablet(context)
-                            ? 36
-                            : 26),
-              ),
-              Space.y(3.w)!,
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10.w),
-                child: Text(
-                  "If you want to avail my services you can contact me at the links below.",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Theme.of(context).brightness == Brightness.dark
-                        ? Colors.grey[200]
-                        : Colors.black,
-                    fontSize: Responsive.isDesktop(context)
-                        ? 18
-                        : Responsive.isTablet(context)
-                            ? 16
-                            : 13,
-                  ),
-                ),
-              ),
-              Space.y(5.w)!,
-              InkWell(
-                onTap: () => StaticData.openURL(StringTheme.whatsapp),
-                child: Container(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-                  decoration: BoxDecoration(
-                      color: Color(0xFF09FBD4),
-
-                      // gradient: buttonGradi,
-                      borderRadius: BorderRadius.circular(10)),
-                  child: const Text(
-                    'Get Started',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: blackColor,
+                        ),
+                        Container(
+                          width: 160,
+                          decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: const BorderRadius.only(
+                                bottomLeft: Radius.circular(8),
+                                bottomRight: Radius.circular(8)),
+                          ),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 30, horizontal: 10),
+                          child: Column(
+                            children: [
+                              Text(
+                                "24",
+                                style: GoogleFonts.inter(
+                                    fontSize: 38,
+                                    fontWeight: FontWeight.w800,
+                                    color: Colors.white),
+                              ),
+                              const SizedBox(height: 10),
+                              Text(
+                                "Tuesday",
+                                style: GoogleFonts.inter(
+                                    fontSize: 14, color: Colors.white),
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
+
+                    const SizedBox(width: 20),
+
+                    // Contact Info
+                    Column(
+                      children: [
+                        ContactButton(
+                          icon: Icons.email,
+                          text: 'saimArshad@gmail.com',
+                        ),
+                        const SizedBox(height: 10),
+                        ContactButton(
+                          icon: Icons.phone,
+                          text: '+92 305 9895650',
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+
+                const SizedBox(height: 20),
+
+                // Book Button
+                ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.black,
+                    backgroundColor: greenColor,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 14),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(6)),
+                  ),
+                  onPressed: () {},
+                  icon: const Icon(Icons.video_call),
+                  label: Text(
+                    'Book a 45 mins session',
+                    style: GoogleFonts.inter(fontWeight: FontWeight.w600),
                   ),
                 ),
-              ),
-              Space.y(10.w)!,
-              // Wrap(
-              //     alignment: WrapAlignment.center,
-              //     runSpacing: 50,
-              //     children: ContactModel.contactModel
-              //         .asMap()
-              //         .entries
-              //         .map((e) => IconButton(
-              //               icon: Image.network(
-              //                 e.value.icon,
-              //                 color: ThemeColor.textColor,
-              //               ),
-              //               onPressed: () => StaticData.openURL(e.value.url),
-              //               highlightColor: Colors.white54,
-              //               iconSize: 21,
-              //             ))
-              //         .toList()),
-              Wrap(
+
+                const SizedBox(height: 30),
+
+                // Social Icons
+                Wrap(
                   alignment: WrapAlignment.center,
                   crossAxisAlignment: WrapCrossAlignment.center,
-                  // runSpacing: 12,
                   children: ContactModel.contactModel
                       .asMap()
                       .entries
                       .map<Widget>((e) => IconButton(
+                            padding: const EdgeInsets.all(4),
+                            constraints: const BoxConstraints(),
                             icon: Image.network(
                               e.value.icon,
+                              color: ThemeColor.textColor,
                               width: 20,
                               height: 20,
-                              color: Theme.of(context).brightness ==
-                                      Brightness.dark
-                                  ? Colors.white
-                                  : Colors.black,
                             ),
                             onPressed: () => StaticData.openURL(e.value.url),
                             highlightColor: Colors.white54,
                             iconSize: 18,
                           ))
-                      .toList()),
-              Space.y(5.w)!,
-              Container(color: Colors.white.withOpacity(0.2), height: 1),
-            ],
-          );
+                      .toList(),
+                ),
+
+                const SizedBox(height: 40),
+
+                // Footer
+                Text.rich(
+                  TextSpan(
+                    text: 'Designed & Crafted by ',
+                    style: GoogleFonts.inter(color: Colors.white54),
+                    children: [
+                      TextSpan(
+                        text: ' Muhammad Saim Arshad',
+                        style: GoogleFonts.inter(color: greenColor),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          tablet: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SizedBox(
+                  height: 30,
+                ),
+                Text("Get in touch",
+                    style: GoogleFonts.inter(
+                      color: greenColor,
+                      fontSize: 24,
+                      fontWeight: FontWeight.w700,
+                    )),
+                const SizedBox(height: 6),
+                Text("Let's build something together :)",
+                    style: GoogleFonts.inter(
+                      color: Colors.white70,
+                      fontSize: 14,
+                    )),
+                const SizedBox(height: 40),
+
+                // Date Card and Contact Info
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // Date Card
+                    Column(
+                      children: [
+                        Container(
+                          width: 160,
+                          decoration: BoxDecoration(
+                            color: greenColor,
+                            borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(8),
+                                topRight: Radius.circular(8)),
+                          ),
+                          padding: const EdgeInsets.all(12),
+                          child: Center(
+                            child: Text(
+                              "June",
+                              style: GoogleFonts.inter(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.black),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          width: 160,
+                          decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: const BorderRadius.only(
+                                bottomLeft: Radius.circular(8),
+                                bottomRight: Radius.circular(8)),
+                          ),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 30, horizontal: 10),
+                          child: Column(
+                            children: [
+                              Text(
+                                "24",
+                                style: GoogleFonts.inter(
+                                    fontSize: 38,
+                                    fontWeight: FontWeight.w800,
+                                    color: Colors.white),
+                              ),
+                              const SizedBox(height: 10),
+                              Text(
+                                "Tuesday",
+                                style: GoogleFonts.inter(
+                                    fontSize: 14, color: Colors.white),
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    const SizedBox(width: 20),
+
+                    // Contact Info
+                    Column(
+                      children: [
+                        ContactButton(
+                          icon: Icons.email,
+                          text: 'saimArshad@gmail.com',
+                        ),
+                        const SizedBox(height: 10),
+                        ContactButton(
+                          icon: Icons.phone,
+                          text: '+92 305 9895650',
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+
+                const SizedBox(height: 20),
+
+                // Book Button
+                ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.black,
+                    backgroundColor: greenColor,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 14),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(6)),
+                  ),
+                  onPressed: () {},
+                  icon: const Icon(Icons.video_call),
+                  label: Text(
+                    'Book a 45 mins session',
+                    style: GoogleFonts.inter(fontWeight: FontWeight.w600),
+                  ),
+                ),
+
+                const SizedBox(height: 30),
+
+                // Social Icons
+                Wrap(
+                  alignment: WrapAlignment.center,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: ContactModel.contactModel
+                      .asMap()
+                      .entries
+                      .map<Widget>((e) => IconButton(
+                            padding: const EdgeInsets.all(4),
+                            constraints: const BoxConstraints(),
+                            icon: Image.network(
+                              e.value.icon,
+                              color: ThemeColor.textColor,
+                              width: 20,
+                              height: 20,
+                            ),
+                            onPressed: () => StaticData.openURL(e.value.url),
+                            highlightColor: Colors.white54,
+                            iconSize: 18,
+                          ))
+                      .toList(),
+                ),
+
+                const SizedBox(height: 40),
+
+                // Footer
+                Text.rich(
+                  TextSpan(
+                    text: 'Designed & Crafted by ',
+                    style: GoogleFonts.inter(color: Colors.white54),
+                    children: [
+                      TextSpan(
+                        text: ' Muhammad Saim Arshad',
+                        style: GoogleFonts.inter(color: greenColor),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          mobile: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SizedBox(
+                  height: 30,
+                ),
+                Text("Get in touch",
+                    style: GoogleFonts.inter(
+                      color: greenColor,
+                      fontSize: 24,
+                      fontWeight: FontWeight.w700,
+                    )),
+                const SizedBox(height: 6),
+                Text("Let's build something together :)",
+                    style: GoogleFonts.inter(
+                      color: Colors.white70,
+                      fontSize: 14,
+                    )),
+                const SizedBox(height: 40),
+
+                // Date Card and Contact Info
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // Date Card
+                    Column(
+                      children: [
+                        Container(
+                          width: 160,
+                          decoration: BoxDecoration(
+                            color: greenColor,
+                            borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(8),
+                                topRight: Radius.circular(8)),
+                          ),
+                          padding: const EdgeInsets.all(12),
+                          child: Center(
+                            child: Text(
+                              "June",
+                              style: GoogleFonts.inter(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.black),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          width: 160,
+                          decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: const BorderRadius.only(
+                                bottomLeft: Radius.circular(8),
+                                bottomRight: Radius.circular(8)),
+                          ),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 30, horizontal: 10),
+                          child: Column(
+                            children: [
+                              Text(
+                                "24",
+                                style: GoogleFonts.inter(
+                                    fontSize: 38,
+                                    fontWeight: FontWeight.w800,
+                                    color: Colors.white),
+                              ),
+                              const SizedBox(height: 10),
+                              Text(
+                                "Tuesday",
+                                style: GoogleFonts.inter(
+                                    fontSize: 14, color: Colors.white),
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    const SizedBox(width: 20),
+
+                    // Contact Info
+                  ],
+                ),
+                const SizedBox(height: 20),
+                Column(
+                  children: [
+                    ContactButton(
+                      icon: Icons.email,
+                      text: 'saimArshad@gmail.com',
+                    ),
+                    const SizedBox(height: 10),
+                    ContactButton(
+                      icon: Icons.phone,
+                      text: '+92 305 9895650',
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20),
+
+                // Book Button
+                ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.black,
+                    backgroundColor: greenColor,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 14),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(6)),
+                  ),
+                  onPressed: () {},
+                  icon: const Icon(Icons.video_call),
+                  label: Text(
+                    'Book a 45 mins session',
+                    style: GoogleFonts.inter(fontWeight: FontWeight.w600),
+                  ),
+                ),
+
+                const SizedBox(height: 30),
+
+                // Social Icons
+                Wrap(
+                  alignment: WrapAlignment.center,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: ContactModel.contactModel
+                      .asMap()
+                      .entries
+                      .map<Widget>((e) => IconButton(
+                            padding: const EdgeInsets.all(4),
+                            constraints: const BoxConstraints(),
+                            icon: Image.network(
+                              e.value.icon,
+                              color: ThemeColor.textColor,
+                              width: 20,
+                              height: 20,
+                            ),
+                            onPressed: () => StaticData.openURL(e.value.url),
+                            highlightColor: Colors.white54,
+                            iconSize: 18,
+                          ))
+                      .toList(),
+                ),
+
+                const SizedBox(height: 40),
+
+                // Footer
+                Text.rich(
+                  TextSpan(
+                    text: 'Designed & Crafted by ',
+                    style: GoogleFonts.inter(color: Colors.white54),
+                    children: [
+                      TextSpan(
+                        text: ' Muhammad Saim Arshad',
+                        style: GoogleFonts.inter(color: greenColor),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ));
+  }
+}
+
+class ContactButton extends StatelessWidget {
+  final IconData icon;
+  final String text;
+
+  const ContactButton({
+    super.key,
+    required this.icon,
+    required this.text,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    const greenColor = Color(0xFF4EFFA5);
+
+    return Container(
+      width: 240,
+      padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
+      decoration: BoxDecoration(
+        color: const Color(0xFF25262B),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Row(
+        children: [
+          Icon(icon, color: greenColor, size: 20),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Text(
+              text,
+              style: GoogleFonts.inter(color: greenColor, fontSize: 14),
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+          const Icon(Icons.arrow_forward_ios, color: greenColor, size: 14)
+        ],
+      ),
+    );
+  }
+}
+
+// Social Media Icon Button
+class SocialIcon extends StatelessWidget {
+  final IconData icon;
+
+  const SocialIcon(this.icon, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    const greenColor = Color(0xFF4EFFA5);
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      child: CircleAvatar(
+        radius: 20,
+        backgroundColor: const Color(0xFF25262B),
+        child: Icon(icon, color: greenColor, size: 16),
+      ),
+    );
   }
 }
