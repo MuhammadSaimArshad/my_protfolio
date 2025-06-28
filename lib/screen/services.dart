@@ -2,7 +2,12 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart' show GoogleFonts;
 import 'package:my_protfolio/Util/colorChangebuttom.dart';
+import 'package:my_protfolio/model/experience_model.dart';
 import 'package:my_protfolio/screen/home.dart';
+import 'package:my_protfolio/screen/widgets/desktop_experience_card.dart';
+import 'package:my_protfolio/screen/widgets/mobile_experirnce_card.dart';
+import 'package:my_protfolio/screen/widgets/tablet_experience_card.dart';
+import 'package:my_protfolio/screen/widgets/tech_bullet.dart' show TechBullet;
 import 'package:sizer/sizer.dart';
 
 import '../Apptheme.dart';
@@ -232,7 +237,7 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
                       style: GoogleFonts.inter(
                         fontSize: 24,
                         fontWeight: FontWeight.w700,
-                        color: greenColor,
+                        color: primaryColor,
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -248,385 +253,102 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
                     const SizedBox(height: 50),
 
                     // Experience Card
-                    Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 30),
-                      padding: const EdgeInsets.all(30),
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).brightness == Brightness.dark
-                            ? const Color(0xFF25262B)
-                            : Colors.grey[400],
-                        // color: const Color(0xFF25262B),
-                        borderRadius: BorderRadius.circular(12),
+                    DesktopExperienceCard(
+                      data: ExperienceModel(
+                        company: "7 Skies Solution",
+                        role: "Flutter Developer",
+                        duration: "Feb 2023 - Sep 2024",
+                        technologies: [
+                          "Flutter",
+                          "Dart",
+                          "Firebase",
+                          "REST APIs"
+                        ],
+                        responsibilities: [
+                          "Working with flutter_bloc state management, alongside provider",
+                          "Integrated payment gateways into flutter app with REST APIs",
+                          "Handled local packages to maintain custom components",
+                          "Maintaining layered architecture for better encapsulation",
+                          "Learned GitHub actions for CI/CD",
+                          "Worked with various env. flavors (dev, qa, prod)",
+                          "Integration of REST APIs, Firebase and caching",
+                        ],
                       ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          // LEFT SIDE
-                          Expanded(
-                            flex: 3,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "7 Skies Solution",
-                                  style: GoogleFonts.inter(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w700,
-                                    color: greenColor,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  "Flutter Developer",
-                                  style: GoogleFonts.inter(
-                                    fontSize: 14,
-                                    color: Colors.white70,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  "Feb 2023 - Sep 2024",
-                                  style: GoogleFonts.inter(
-                                    fontSize: 14,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                const SizedBox(height: 20),
-                                Text(
-                                  "Technologies",
-                                  style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 15,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                const SizedBox(height: 10),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    TechBullet("Flutter"),
-                                    TechBullet("Dart"),
-                                    TechBullet("Firebase"),
-                                    TechBullet("REST APIs"),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
+                    ),
 
-                          const SizedBox(width: 30),
+                    SizedBox(height: 20),
+                    // Experience Card
+                    DesktopExperienceCard(
+                      data: ExperienceModel(
+                        company: "Hisley Tech",
+                        role: "Flutter Developer",
+                        duration: "Sep 2024 - Oct 2024",
+                        technologies: [
+                          "Flutter",
+                          "Dart",
+                          "Firebase",
+                          "REST APIs"
+                        ],
+                        responsibilities: [
+                          "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases",
+                          "Integrated payment gateways into flutter app with REST APIs",
+                          "Handled local packages to maintain custom components and to maintain API architecture",
+                          "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer",
+                          "Learned GitHub actions for CI/CD",
+                          "Worked with various env. flavors in flutter app (dev, qa, stage, prod)",
+                          "Integration of REST APIs, Firebase and local cached concepts for better user experience",
+                        ],
+                      ),
+                    ),
 
-                          // RIGHT SIDE
-                          Expanded(
-                            flex: 5,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
-                                RoleBullet(
-                                    "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases"),
-                                RoleBullet(
-                                    "Integrated payment gateways into flutter app with REST APIs"),
-                                RoleBullet(
-                                    "Handled local packages to maintain custom components and to maintain API architecture"),
-                                RoleBullet(
-                                    "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer"),
-                                RoleBullet("Learned GitHub actions for CI/CD"),
-                                RoleBullet(
-                                    "Worked with various env. flavors in flutter app (dev, qa, stage, prod)"),
-                                RoleBullet(
-                                    "Integration of REST APIs, Firebase and local cached concepts for better user experience"),
-                              ],
-                            ),
-                          ),
+                    SizedBox(height: 20),
+                    // Experience Card
+                    DesktopExperienceCard(
+                      data: ExperienceModel(
+                        company: "IT Solera",
+                        role: "Flutter Developer",
+                        duration: "Oct 2024 - Nov 2024",
+                        technologies: [
+                          "Flutter",
+                          "Dart",
+                          "Firebase",
+                          "REST APIs"
+                        ],
+                        responsibilities: [
+                          "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases",
+                          "Integrated payment gateways into flutter app with REST APIs",
+                          "Handled local packages to maintain custom components and to maintain API architecture",
+                          "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer",
+                          "Learned GitHub actions for CI/CD",
+                          "Worked with various env. flavors in flutter app (dev, qa, stage, prod)",
+                          "Integration of REST APIs, Firebase and local cached concepts for better user experience",
                         ],
                       ),
                     ),
                     SizedBox(height: 20),
                     // Experience Card
-                    Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 30),
-                      padding: const EdgeInsets.all(30),
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).brightness == Brightness.dark
-                            ? const Color(0xFF25262B)
-                            : Colors.grey[400],
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          // LEFT SIDE
-                          Expanded(
-                            flex: 3,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Hisley Tech",
-                                  style: GoogleFonts.inter(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w700,
-                                    color: greenColor,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  "Flutter Developer",
-                                  style: GoogleFonts.inter(
-                                    fontSize: 14,
-                                    color: Colors.white70,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  "Sep 2024- Oct 2024",
-                                  style: GoogleFonts.inter(
-                                    fontSize: 14,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                const SizedBox(height: 20),
-                                Text(
-                                  "Technologies",
-                                  style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 15,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                const SizedBox(height: 10),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    TechBullet("Flutter"),
-                                    TechBullet("Dart"),
-                                    TechBullet("Firebase"),
-                                    TechBullet("REST APIs"),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-
-                          const SizedBox(width: 30),
-
-                          // RIGHT SIDE
-                          Expanded(
-                            flex: 5,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
-                                RoleBullet(
-                                    "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases"),
-                                RoleBullet(
-                                    "Integrated payment gateways into flutter app with REST APIs"),
-                                RoleBullet(
-                                    "Handled local packages to maintain custom components and to maintain API architecture"),
-                                RoleBullet(
-                                    "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer"),
-                                RoleBullet("Learned GitHub actions for CI/CD"),
-                                RoleBullet(
-                                    "Worked with various env. flavors in flutter app (dev, qa, stage, prod)"),
-                                RoleBullet(
-                                    "Integration of REST APIs, Firebase and local cached concepts for better user experience"),
-                              ],
-                            ),
-                          ),
+                    DesktopExperienceCard(
+                      data: ExperienceModel(
+                        company: "Green Tech",
+                        role: "Flutter Developer",
+                        duration: "Present",
+                        technologies: [
+                          "Flutter",
+                          "Dart",
+                          "Firebase",
+                          "REST APIs"
+                        ],
+                        responsibilities: [
+                          "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases",
+                          "Integrated payment gateways into flutter app with REST APIs",
+                          "Handled local packages to maintain custom components and to maintain API architecture",
+                          "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer",
+                          "Learned GitHub actions for CI/CD",
+                          "Worked with various env. flavors in flutter app (dev, qa, stage, prod)",
+                          "Integration of REST APIs, Firebase and local cached concepts for better user experience",
                         ],
                       ),
                     ),
-                    SizedBox(height: 20),
-                    // Experience Card
-                    Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 30),
-                      padding: const EdgeInsets.all(30),
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).brightness == Brightness.dark
-                            ? const Color(0xFF25262B)
-                            : Colors.grey[400],
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          // LEFT SIDE
-                          Expanded(
-                            flex: 3,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "IT Solera",
-                                  style: GoogleFonts.inter(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w700,
-                                    color: greenColor,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  "Flutter Developer",
-                                  style: GoogleFonts.inter(
-                                    fontSize: 14,
-                                    color: Colors.white70,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  "Oct 2024- Nov 2024",
-                                  style: GoogleFonts.inter(
-                                    fontSize: 14,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                const SizedBox(height: 20),
-                                Text(
-                                  "Technologies",
-                                  style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 15,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                const SizedBox(height: 10),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    TechBullet("Flutter"),
-                                    TechBullet("Dart"),
-                                    TechBullet("Firebase"),
-                                    TechBullet("REST APIs"),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-
-                          const SizedBox(width: 30),
-
-                          // RIGHT SIDE
-                          Expanded(
-                            flex: 5,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
-                                RoleBullet(
-                                    "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases"),
-                                RoleBullet(
-                                    "Integrated payment gateways into flutter app with REST APIs"),
-                                RoleBullet(
-                                    "Handled local packages to maintain custom components and to maintain API architecture"),
-                                RoleBullet(
-                                    "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer"),
-                                RoleBullet("Learned GitHub actions for CI/CD"),
-                                RoleBullet(
-                                    "Worked with various env. flavors in flutter app (dev, qa, stage, prod)"),
-                                RoleBullet(
-                                    "Integration of REST APIs, Firebase and local cached concepts for better user experience"),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    // Experience Card
-                    Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 30),
-                      padding: const EdgeInsets.all(30),
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).brightness == Brightness.dark
-                            ? const Color(0xFF25262B)
-                            : Colors.grey[400],
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          // LEFT SIDE
-                          Expanded(
-                            flex: 3,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Green Professsional Technologies",
-                                  style: GoogleFonts.inter(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w700,
-                                    color: greenColor,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  "Flutter Developer",
-                                  style: GoogleFonts.inter(
-                                    fontSize: 14,
-                                    color: Colors.white70,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  "Present",
-                                  style: GoogleFonts.inter(
-                                    fontSize: 14,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                const SizedBox(height: 20),
-                                Text(
-                                  "Technologies",
-                                  style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 15,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                const SizedBox(height: 10),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    TechBullet("Flutter"),
-                                    TechBullet("Dart"),
-                                    TechBullet("Firebase"),
-                                    TechBullet("REST APIs"),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-
-                          const SizedBox(width: 30),
-
-                          // RIGHT SIDE
-                          Expanded(
-                            flex: 5,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
-                                RoleBullet(
-                                    "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases"),
-                                RoleBullet(
-                                    "Integrated payment gateways into flutter app with REST APIs"),
-                                RoleBullet(
-                                    "Handled local packages to maintain custom components and to maintain API architecture"),
-                                RoleBullet(
-                                    "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer"),
-                                RoleBullet("Learned GitHub actions for CI/CD"),
-                                RoleBullet(
-                                    "Worked with various env. flavors in flutter app (dev, qa, stage, prod)"),
-                                RoleBullet(
-                                    "Integration of REST APIs, Firebase and local cached concepts for better user experience"),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
                   ],
                 ),
               )
@@ -837,7 +559,7 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
                       style: GoogleFonts.inter(
                         fontSize: 24,
                         fontWeight: FontWeight.w700,
-                        color: greenColor,
+                        color: primaryColor,
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -853,384 +575,102 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
                     const SizedBox(height: 50),
 
                     // Experience Card
-                    Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 30),
-                      padding: const EdgeInsets.all(30),
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).brightness == Brightness.dark
-                            ? const Color(0xFF25262B)
-                            : Colors.grey[400],
-                        borderRadius: BorderRadius.circular(12),
+                    TabletExperienceCard(
+                      data: ExperienceModel(
+                        company: "7 Skies Solution",
+                        role: "Flutter Developer",
+                        duration: "Feb 2023 - Sep 2024",
+                        technologies: [
+                          "Flutter",
+                          "Dart",
+                          "Firebase",
+                          "REST APIs"
+                        ],
+                        responsibilities: [
+                          "Working with flutter_bloc state management, alongside provider",
+                          "Integrated payment gateways into flutter app with REST APIs",
+                          "Handled local packages to maintain custom components",
+                          "Maintaining layered architecture for better encapsulation",
+                          "Learned GitHub actions for CI/CD",
+                          "Worked with various env. flavors (dev, qa, prod)",
+                          "Integration of REST APIs, Firebase and caching",
+                        ],
                       ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          // LEFT SIDE
-                          Expanded(
-                            flex: 3,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "7 Skies Solution",
-                                  style: GoogleFonts.inter(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w700,
-                                    color: greenColor,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  "Flutter Developer",
-                                  style: GoogleFonts.inter(
-                                    fontSize: 14,
-                                    color: Colors.white70,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  "Feb 2023 - Sep 2024",
-                                  style: GoogleFonts.inter(
-                                    fontSize: 14,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                const SizedBox(height: 20),
-                                Text(
-                                  "Technologies",
-                                  style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 15,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                const SizedBox(height: 10),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    TechBullet("Flutter"),
-                                    TechBullet("Dart"),
-                                    TechBullet("Firebase"),
-                                    TechBullet("REST APIs"),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
+                    ),
 
-                          const SizedBox(width: 30),
+                    SizedBox(height: 20),
+                    // Experience Card
+                    TabletExperienceCard(
+                      data: ExperienceModel(
+                        company: "Hisley Tech",
+                        role: "Flutter Developer",
+                        duration: "Sep 2024 - Oct 2024",
+                        technologies: [
+                          "Flutter",
+                          "Dart",
+                          "Firebase",
+                          "REST APIs"
+                        ],
+                        responsibilities: [
+                          "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases",
+                          "Integrated payment gateways into flutter app with REST APIs",
+                          "Handled local packages to maintain custom components and to maintain API architecture",
+                          "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer",
+                          "Learned GitHub actions for CI/CD",
+                          "Worked with various env. flavors in flutter app (dev, qa, stage, prod)",
+                          "Integration of REST APIs, Firebase and local cached concepts for better user experience",
+                        ],
+                      ),
+                    ),
 
-                          // RIGHT SIDE
-                          Expanded(
-                            flex: 5,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
-                                RoleBullet(
-                                    "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases"),
-                                RoleBullet(
-                                    "Integrated payment gateways into flutter app with REST APIs"),
-                                RoleBullet(
-                                    "Handled local packages to maintain custom components and to maintain API architecture"),
-                                RoleBullet(
-                                    "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer"),
-                                RoleBullet("Learned GitHub actions for CI/CD"),
-                                RoleBullet(
-                                    "Worked with various env. flavors in flutter app (dev, qa, stage, prod)"),
-                                RoleBullet(
-                                    "Integration of REST APIs, Firebase and local cached concepts for better user experience"),
-                              ],
-                            ),
-                          ),
+                    SizedBox(height: 20),
+                    // Experience Card
+                    TabletExperienceCard(
+                      data: ExperienceModel(
+                        company: "IT Solera",
+                        role: "Flutter Developer",
+                        duration: "Oct 2024 - Nov 2024",
+                        technologies: [
+                          "Flutter",
+                          "Dart",
+                          "Firebase",
+                          "REST APIs"
+                        ],
+                        responsibilities: [
+                          "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases",
+                          "Integrated payment gateways into flutter app with REST APIs",
+                          "Handled local packages to maintain custom components and to maintain API architecture",
+                          "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer",
+                          "Learned GitHub actions for CI/CD",
+                          "Worked with various env. flavors in flutter app (dev, qa, stage, prod)",
+                          "Integration of REST APIs, Firebase and local cached concepts for better user experience",
                         ],
                       ),
                     ),
                     SizedBox(height: 20),
                     // Experience Card
-                    Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 30),
-                      padding: const EdgeInsets.all(30),
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).brightness == Brightness.dark
-                            ? const Color(0xFF25262B)
-                            : Colors.grey[400],
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          // LEFT SIDE
-                          Expanded(
-                            flex: 3,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Hisley Tech",
-                                  style: GoogleFonts.inter(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w700,
-                                    color: greenColor,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  "Flutter Developer",
-                                  style: GoogleFonts.inter(
-                                    fontSize: 14,
-                                    color: Colors.white70,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  "Sep 2024- Oct 2024",
-                                  style: GoogleFonts.inter(
-                                    fontSize: 14,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                const SizedBox(height: 20),
-                                Text(
-                                  "Technologies",
-                                  style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 15,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                const SizedBox(height: 10),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    TechBullet("Flutter"),
-                                    TechBullet("Dart"),
-                                    TechBullet("Firebase"),
-                                    TechBullet("REST APIs"),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-
-                          const SizedBox(width: 30),
-
-                          // RIGHT SIDE
-                          Expanded(
-                            flex: 5,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
-                                RoleBullet(
-                                    "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases"),
-                                RoleBullet(
-                                    "Integrated payment gateways into flutter app with REST APIs"),
-                                RoleBullet(
-                                    "Handled local packages to maintain custom components and to maintain API architecture"),
-                                RoleBullet(
-                                    "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer"),
-                                RoleBullet("Learned GitHub actions for CI/CD"),
-                                RoleBullet(
-                                    "Worked with various env. flavors in flutter app (dev, qa, stage, prod)"),
-                                RoleBullet(
-                                    "Integration of REST APIs, Firebase and local cached concepts for better user experience"),
-                              ],
-                            ),
-                          ),
+                    TabletExperienceCard(
+                      data: ExperienceModel(
+                        company: "Green Tech",
+                        role: "Flutter Developer",
+                        duration: "Present",
+                        technologies: [
+                          "Flutter",
+                          "Dart",
+                          "Firebase",
+                          "REST APIs"
+                        ],
+                        responsibilities: [
+                          "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases",
+                          "Integrated payment gateways into flutter app with REST APIs",
+                          "Handled local packages to maintain custom components and to maintain API architecture",
+                          "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer",
+                          "Learned GitHub actions for CI/CD",
+                          "Worked with various env. flavors in flutter app (dev, qa, stage, prod)",
+                          "Integration of REST APIs, Firebase and local cached concepts for better user experience",
                         ],
                       ),
                     ),
-                    SizedBox(height: 20),
-                    // Experience Card
-                    Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 30),
-                      padding: const EdgeInsets.all(30),
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).brightness == Brightness.dark
-                            ? const Color(0xFF25262B)
-                            : Colors.grey[400],
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          // LEFT SIDE
-                          Expanded(
-                            flex: 3,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "IT Solera",
-                                  style: GoogleFonts.inter(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w700,
-                                    color: greenColor,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  "Flutter Developer",
-                                  style: GoogleFonts.inter(
-                                    fontSize: 14,
-                                    color: Colors.white70,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  "Oct 2024- Nov 2024",
-                                  style: GoogleFonts.inter(
-                                    fontSize: 14,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                const SizedBox(height: 20),
-                                Text(
-                                  "Technologies",
-                                  style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 15,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                const SizedBox(height: 10),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    TechBullet("Flutter"),
-                                    TechBullet("Dart"),
-                                    TechBullet("Firebase"),
-                                    TechBullet("REST APIs"),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-
-                          const SizedBox(width: 30),
-
-                          // RIGHT SIDE
-                          Expanded(
-                            flex: 5,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
-                                RoleBullet(
-                                    "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases"),
-                                RoleBullet(
-                                    "Integrated payment gateways into flutter app with REST APIs"),
-                                RoleBullet(
-                                    "Handled local packages to maintain custom components and to maintain API architecture"),
-                                RoleBullet(
-                                    "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer"),
-                                RoleBullet("Learned GitHub actions for CI/CD"),
-                                RoleBullet(
-                                    "Worked with various env. flavors in flutter app (dev, qa, stage, prod)"),
-                                RoleBullet(
-                                    "Integration of REST APIs, Firebase and local cached concepts for better user experience"),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    // Experience Card
-                    Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 10),
-                      padding: const EdgeInsets.all(30),
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).brightness == Brightness.dark
-                            ? const Color(0xFF25262B)
-                            : Colors.grey[400],
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          // LEFT SIDE
-                          Expanded(
-                            flex: 3,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Green Professsional Technologies",
-                                  style: GoogleFonts.inter(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w700,
-                                    color: greenColor,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  "Flutter Developer",
-                                  style: GoogleFonts.inter(
-                                    fontSize: 14,
-                                    color: Colors.white70,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  "Present",
-                                  style: GoogleFonts.inter(
-                                    fontSize: 14,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                const SizedBox(height: 20),
-                                Text(
-                                  "Technologies",
-                                  style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 15,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                const SizedBox(height: 10),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    TechBullet("Flutter"),
-                                    TechBullet("Dart"),
-                                    TechBullet("Firebase"),
-                                    TechBullet("REST APIs"),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-
-                          const SizedBox(width: 30),
-
-                          // RIGHT SIDE
-                          Expanded(
-                            flex: 5,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
-                                RoleBullet(
-                                    "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases"),
-                                RoleBullet(
-                                    "Integrated payment gateways into flutter app with REST APIs"),
-                                RoleBullet(
-                                    "Handled local packages to maintain custom components and to maintain API architecture"),
-                                RoleBullet(
-                                    "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer"),
-                                RoleBullet("Learned GitHub actions for CI/CD"),
-                                RoleBullet(
-                                    "Worked with various env. flavors in flutter app (dev, qa, stage, prod)"),
-                                RoleBullet(
-                                    "Integration of REST APIs, Firebase and local cached concepts for better user experience"),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
                   ],
                 ),
               )
@@ -1435,7 +875,7 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
                     style: GoogleFonts.inter(
                       fontSize: 24,
                       fontWeight: FontWeight.w700,
-                      color: greenColor,
+                      color: primaryColor,
                     ),
                   ),
                   const SizedBox(height: 10),
@@ -1451,384 +891,102 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
                   const SizedBox(height: 50),
 
                   // Experience Card
-                  Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 20),
-                    padding: const EdgeInsets.all(30),
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).brightness == Brightness.dark
-                          ? const Color(0xFF25262B)
-                          : Colors.grey[400],
-                      borderRadius: BorderRadius.circular(12),
+                  MobileExperienceCard(
+                    data: ExperienceModel(
+                      company: "7 Skies Solution",
+                      role: "Flutter Developer",
+                      duration: "Feb 2023 - Sep 2024",
+                      technologies: [
+                        "Flutter",
+                        "Dart",
+                        "Firebase",
+                        "REST APIs"
+                      ],
+                      responsibilities: [
+                        "Working with flutter_bloc state management, alongside provider",
+                        "Integrated payment gateways into flutter app with REST APIs",
+                        "Handled local packages to maintain custom components",
+                        "Maintaining layered architecture for better encapsulation",
+                        "Learned GitHub actions for CI/CD",
+                        "Worked with various env. flavors (dev, qa, prod)",
+                        "Integration of REST APIs, Firebase and caching",
+                      ],
                     ),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        // LEFT SIDE
-                        Expanded(
-                          flex: 3,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "7 Skies Solution",
-                                style: GoogleFonts.inter(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w700,
-                                  color: greenColor,
-                                ),
-                              ),
-                              const SizedBox(height: 4),
-                              Text(
-                                "Flutter Developer",
-                                style: GoogleFonts.inter(
-                                  fontSize: 14,
-                                  color: Colors.white70,
-                                ),
-                              ),
-                              const SizedBox(height: 4),
-                              Text(
-                                "Feb 2023 - Sep 2024",
-                                style: GoogleFonts.inter(
-                                  fontSize: 14,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              const SizedBox(height: 20),
-                              Text(
-                                "Technologies",
-                                style: GoogleFonts.inter(
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 13,
-                                  color: Colors.white,
-                                ),
-                              ),
-                              const SizedBox(height: 10),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const [
-                                  TechBullet("Flutter"),
-                                  TechBullet("Dart"),
-                                  TechBullet("Firebase"),
-                                  TechBullet("REST APIs"),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
+                  ),
 
-                        const SizedBox(width: 30),
+                  SizedBox(height: 20),
+                  // Experience Card
+                  MobileExperienceCard(
+                    data: ExperienceModel(
+                      company: "Hisley Tech",
+                      role: "Flutter Developer",
+                      duration: "Sep 2024 - Oct 2024",
+                      technologies: [
+                        "Flutter",
+                        "Dart",
+                        "Firebase",
+                        "REST APIs"
+                      ],
+                      responsibilities: [
+                        "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases",
+                        "Integrated payment gateways into flutter app with REST APIs",
+                        "Handled local packages to maintain custom components and to maintain API architecture",
+                        "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer",
+                        "Learned GitHub actions for CI/CD",
+                        "Worked with various env. flavors in flutter app (dev, qa, stage, prod)",
+                        "Integration of REST APIs, Firebase and local cached concepts for better user experience",
+                      ],
+                    ),
+                  ),
 
-                        // RIGHT SIDE
-                        Expanded(
-                          flex: 5,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              RoleBullet(
-                                  "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases"),
-                              RoleBullet(
-                                  "Integrated payment gateways into flutter app with REST APIs"),
-                              RoleBullet(
-                                  "Handled local packages to maintain custom components and to maintain API architecture"),
-                              RoleBullet(
-                                  "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer"),
-                              RoleBullet("Learned GitHub actions for CI/CD"),
-                              RoleBullet(
-                                  "Worked with various env. flavors in flutter app (dev, qa, stage, prod)"),
-                              RoleBullet(
-                                  "Integration of REST APIs, Firebase and local cached concepts for better user experience"),
-                            ],
-                          ),
-                        ),
+                  SizedBox(height: 20),
+                  // Experience Card
+                  MobileExperienceCard(
+                    data: ExperienceModel(
+                      company: "IT Solera",
+                      role: "Flutter Developer",
+                      duration: "Oct 2024 - Nov 2024",
+                      technologies: [
+                        "Flutter",
+                        "Dart",
+                        "Firebase",
+                        "REST APIs"
+                      ],
+                      responsibilities: [
+                        "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases",
+                        "Integrated payment gateways into flutter app with REST APIs",
+                        "Handled local packages to maintain custom components and to maintain API architecture",
+                        "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer",
+                        "Learned GitHub actions for CI/CD",
+                        "Worked with various env. flavors in flutter app (dev, qa, stage, prod)",
+                        "Integration of REST APIs, Firebase and local cached concepts for better user experience",
                       ],
                     ),
                   ),
                   SizedBox(height: 20),
                   // Experience Card
-                  Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 30),
-                    padding: const EdgeInsets.all(30),
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).brightness == Brightness.dark
-                          ? const Color(0xFF25262B)
-                          : Colors.grey[400],
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        // LEFT SIDE
-                        Expanded(
-                          flex: 3,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Hisley Tech",
-                                style: GoogleFonts.inter(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w700,
-                                  color: greenColor,
-                                ),
-                              ),
-                              const SizedBox(height: 4),
-                              Text(
-                                "Flutter Developer",
-                                style: GoogleFonts.inter(
-                                  fontSize: 14,
-                                  color: Colors.white70,
-                                ),
-                              ),
-                              const SizedBox(height: 4),
-                              Text(
-                                "Sep 2024- Oct 2024",
-                                style: GoogleFonts.inter(
-                                  fontSize: 14,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              const SizedBox(height: 20),
-                              Text(
-                                "Technologies",
-                                style: GoogleFonts.inter(
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 13,
-                                  color: Colors.white,
-                                ),
-                              ),
-                              const SizedBox(height: 10),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const [
-                                  TechBullet("Flutter"),
-                                  TechBullet("Dart"),
-                                  TechBullet("Firebase"),
-                                  TechBullet("REST APIs"),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-
-                        const SizedBox(width: 30),
-
-                        // RIGHT SIDE
-                        Expanded(
-                          flex: 5,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              RoleBullet(
-                                  "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases"),
-                              RoleBullet(
-                                  "Integrated payment gateways into flutter app with REST APIs"),
-                              RoleBullet(
-                                  "Handled local packages to maintain custom components and to maintain API architecture"),
-                              RoleBullet(
-                                  "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer"),
-                              RoleBullet("Learned GitHub actions for CI/CD"),
-                              RoleBullet(
-                                  "Worked with various env. flavors in flutter app (dev, qa, stage, prod)"),
-                              RoleBullet(
-                                  "Integration of REST APIs, Firebase and local cached concepts for better user experience"),
-                            ],
-                          ),
-                        ),
+                  MobileExperienceCard(
+                    data: ExperienceModel(
+                      company: "Green Tech",
+                      role: "Flutter Developer",
+                      duration: "Present",
+                      technologies: [
+                        "Flutter",
+                        "Dart",
+                        "Firebase",
+                        "REST APIs"
+                      ],
+                      responsibilities: [
+                        "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases",
+                        "Integrated payment gateways into flutter app with REST APIs",
+                        "Handled local packages to maintain custom components and to maintain API architecture",
+                        "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer",
+                        "Learned GitHub actions for CI/CD",
+                        "Worked with various env. flavors in flutter app (dev, qa, stage, prod)",
+                        "Integration of REST APIs, Firebase and local cached concepts for better user experience",
                       ],
                     ),
                   ),
-                  SizedBox(height: 20),
-                  // Experience Card
-                  Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 30),
-                    padding: const EdgeInsets.all(30),
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).brightness == Brightness.dark
-                          ? const Color(0xFF25262B)
-                          : Colors.grey[400],
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        // LEFT SIDE
-                        Expanded(
-                          flex: 3,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "IT Solera",
-                                style: GoogleFonts.inter(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w700,
-                                  color: greenColor,
-                                ),
-                              ),
-                              const SizedBox(height: 4),
-                              Text(
-                                "Flutter Developer",
-                                style: GoogleFonts.inter(
-                                  fontSize: 14,
-                                  color: Colors.white70,
-                                ),
-                              ),
-                              const SizedBox(height: 4),
-                              Text(
-                                "Oct 2024- Nov 2024",
-                                style: GoogleFonts.inter(
-                                  fontSize: 14,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              const SizedBox(height: 20),
-                              Text(
-                                "Technologies",
-                                style: GoogleFonts.inter(
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 13,
-                                  color: Colors.white,
-                                ),
-                              ),
-                              const SizedBox(height: 10),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const [
-                                  TechBullet("Flutter"),
-                                  TechBullet("Dart"),
-                                  TechBullet("Firebase"),
-                                  TechBullet("REST APIs"),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-
-                        const SizedBox(width: 30),
-
-                        // RIGHT SIDE
-                        Expanded(
-                          flex: 5,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              RoleBullet(
-                                  "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases"),
-                              RoleBullet(
-                                  "Integrated payment gateways into flutter app with REST APIs"),
-                              RoleBullet(
-                                  "Handled local packages to maintain custom components and to maintain API architecture"),
-                              RoleBullet(
-                                  "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer"),
-                              RoleBullet("Learned GitHub actions for CI/CD"),
-                              RoleBullet(
-                                  "Worked with various env. flavors in flutter app (dev, qa, stage, prod)"),
-                              RoleBullet(
-                                  "Integration of REST APIs, Firebase and local cached concepts for better user experience"),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  // Experience Card
-                  Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 30),
-                    padding: const EdgeInsets.all(30),
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).brightness == Brightness.dark
-                          ? const Color(0xFF25262B)
-                          : Colors.grey[400],
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        // LEFT SIDE
-                        Expanded(
-                          flex: 3,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Green\nTech",
-                                style: GoogleFonts.inter(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w700,
-                                  color: greenColor,
-                                ),
-                              ),
-                              const SizedBox(height: 4),
-                              Text(
-                                "Flutter Developer",
-                                style: GoogleFonts.inter(
-                                  fontSize: 14,
-                                  color: Colors.white70,
-                                ),
-                              ),
-                              const SizedBox(height: 4),
-                              Text(
-                                "Present",
-                                style: GoogleFonts.inter(
-                                  fontSize: 14,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              const SizedBox(height: 20),
-                              Text(
-                                "Technologies",
-                                style: GoogleFonts.inter(
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 13,
-                                  color: Colors.white,
-                                ),
-                              ),
-                              const SizedBox(height: 10),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const [
-                                  TechBullet("Flutter"),
-                                  TechBullet("Dart"),
-                                  TechBullet("Firebase"),
-                                  TechBullet("REST APIs"),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-
-                        const SizedBox(width: 30),
-
-                        // RIGHT SIDE
-                        Expanded(
-                          flex: 5,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              RoleBullet(
-                                  "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases"),
-                              RoleBullet(
-                                  "Integrated payment gateways into flutter app with REST APIs"),
-                              RoleBullet(
-                                  "Handled local packages to maintain custom components and to maintain API architecture"),
-                              RoleBullet(
-                                  "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer"),
-                              RoleBullet("Learned GitHub actions for CI/CD"),
-                              RoleBullet(
-                                  "Worked with various env. flavors in flutter app (dev, qa, stage, prod)"),
-                              RoleBullet(
-                                  "Integration of REST APIs, Firebase and local cached concepts for better user experience"),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
                 ],
               ),
             )
@@ -1870,53 +1028,6 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
           Icon(icon, size: 16, color: Colors.black),
           const SizedBox(width: 6),
           Text(label, style: const TextStyle(color: Colors.black)),
-        ],
-      ),
-    );
-  }
-}
-
-class TechBullet extends StatelessWidget {
-  final String text;
-  const TechBullet(this.text, {super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 6),
-      child: Row(
-        children: [
-          const Text("• ", style: TextStyle(color: Colors.white)),
-          Expanded(
-            child: Text(
-              text,
-              style: GoogleFonts.inter(color: Colors.white, fontSize: 13),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class RoleBullet extends StatelessWidget {
-  final String text;
-  const RoleBullet(this.text, {super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text("• ", style: TextStyle(color: Colors.white)),
-          Expanded(
-            child: Text(
-              text,
-              style: GoogleFonts.inter(color: Colors.white, fontSize: 13),
-            ),
-          ),
         ],
       ),
     );
