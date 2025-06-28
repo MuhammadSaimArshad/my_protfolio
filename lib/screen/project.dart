@@ -35,6 +35,7 @@ class _ProjectsState extends State<Projects> {
                 Text(
                   "\nProjects",
                   style: TextStyle(
+                      color: primaryColor,
                       fontSize: Responsive.isDesktop(context)
                           ? 56
                           : Responsive.isTablet(context)
@@ -46,7 +47,9 @@ class _ProjectsState extends State<Projects> {
                   StringTheme.protfolioSubHeading,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: ThemeColor.textColor.withOpacity(0.6),
+                    color: Theme.of(context).brightness == Brightness.dark
+                        ? Colors.white70
+                        : Colors.grey,
                     fontSize: Responsive.isDesktop(context)
                         ? 18
                         : Responsive.isTablet(context)
@@ -154,6 +157,7 @@ class _ProjectsState extends State<Projects> {
               Text(
                 "\nProjects",
                 style: TextStyle(
+                    color: primaryColor,
                     fontSize: Responsive.isDesktop(context)
                         ? 56
                         : Responsive.isTablet(context)
@@ -167,7 +171,9 @@ class _ProjectsState extends State<Projects> {
                   StringTheme.protfolioSubHeading,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: ThemeColor.textColor.withOpacity(0.6),
+                    color: Theme.of(context).brightness == Brightness.dark
+                        ? Colors.white70
+                        : Colors.grey,
                     fontSize: Responsive.isDesktop(context)
                         ? 18
                         : Responsive.isTablet(context)
