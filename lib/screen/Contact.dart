@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart' show GoogleFonts;
+import 'package:intl/intl.dart';
+import 'package:my_protfolio/screen/widgets/contact_button.dart';
 import 'package:sizer/sizer.dart';
 
 import '../Apptheme.dart';
@@ -26,6 +28,10 @@ class _ContactState extends State<Contact> {
     width = MediaQuery.of(context).size.width;
     const greenColor = Color(0xFF4EFFA5);
     const bgColor = Color(0xFF1D1E22);
+    final now = DateTime.now();
+    final String month = DateFormat.MMMM().format(now); // June
+    final String day = DateFormat.EEEE().format(now); // Tuesday
+    final String date = DateFormat.d().format(now); // 24
     return Container(
         padding: EdgeInsets.symmetric(horizontal: width / 9.9)
             .copyWith(bottom: height * 0.2),
@@ -40,14 +46,16 @@ class _ContactState extends State<Contact> {
                 ),
                 Text("Get in touch",
                     style: GoogleFonts.inter(
-                      color: greenColor,
+                      color: primaryColor,
                       fontSize: 24,
                       fontWeight: FontWeight.w700,
                     )),
                 const SizedBox(height: 6),
                 Text("Let's build something together :)",
                     style: GoogleFonts.inter(
-                      color: Colors.white70,
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white54
+                          : Colors.grey,
                       fontSize: 14,
                     )),
                 const SizedBox(height: 40),
@@ -62,7 +70,7 @@ class _ContactState extends State<Contact> {
                         Container(
                           width: 160,
                           decoration: BoxDecoration(
-                            color: greenColor,
+                            color: primaryColor,
                             borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(8),
                                 topRight: Radius.circular(8)),
@@ -70,7 +78,7 @@ class _ContactState extends State<Contact> {
                           padding: const EdgeInsets.all(12),
                           child: Center(
                             child: Text(
-                              "June",
+                              month,
                               style: GoogleFonts.inter(
                                   fontSize: 18,
                                   fontWeight: FontWeight.w700,
@@ -81,7 +89,10 @@ class _ContactState extends State<Contact> {
                         Container(
                           width: 160,
                           decoration: BoxDecoration(
-                            color: Colors.black,
+                            color:
+                                Theme.of(context).brightness == Brightness.dark
+                                    ? Colors.black
+                                    : Colors.grey,
                             borderRadius: const BorderRadius.only(
                                 bottomLeft: Radius.circular(8),
                                 bottomRight: Radius.circular(8)),
@@ -91,7 +102,7 @@ class _ContactState extends State<Contact> {
                           child: Column(
                             children: [
                               Text(
-                                "24",
+                                date,
                                 style: GoogleFonts.inter(
                                     fontSize: 38,
                                     fontWeight: FontWeight.w800,
@@ -99,7 +110,7 @@ class _ContactState extends State<Contact> {
                               ),
                               const SizedBox(height: 10),
                               Text(
-                                "Tuesday",
+                                day,
                                 style: GoogleFonts.inter(
                                     fontSize: 14, color: Colors.white),
                               )
@@ -134,7 +145,7 @@ class _ContactState extends State<Contact> {
                 ElevatedButton.icon(
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.black,
-                    backgroundColor: greenColor,
+                    backgroundColor: primaryColor,
                     padding: const EdgeInsets.symmetric(
                         horizontal: 20, vertical: 14),
                     shape: RoundedRectangleBorder(
@@ -162,7 +173,10 @@ class _ContactState extends State<Contact> {
                             constraints: const BoxConstraints(),
                             icon: Image.network(
                               e.value.icon,
-                              color: ThemeColor.textColor,
+                              color: Theme.of(context).brightness ==
+                                      Brightness.dark
+                                  ? ThemeColor.textColor
+                                  : Colors.black,
                               width: 20,
                               height: 20,
                             ),
@@ -179,11 +193,15 @@ class _ContactState extends State<Contact> {
                 Text.rich(
                   TextSpan(
                     text: 'Designed & Crafted by ',
-                    style: GoogleFonts.inter(color: Colors.white54),
+                    style: GoogleFonts.inter(
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white54
+                          : Colors.grey,
+                    ),
                     children: [
                       TextSpan(
                         text: ' Muhammad Saim Arshad',
-                        style: GoogleFonts.inter(color: greenColor),
+                        style: GoogleFonts.inter(color: primaryColor),
                       ),
                     ],
                   ),
@@ -201,14 +219,16 @@ class _ContactState extends State<Contact> {
                 ),
                 Text("Get in touch",
                     style: GoogleFonts.inter(
-                      color: greenColor,
+                      color: primaryColor,
                       fontSize: 24,
                       fontWeight: FontWeight.w700,
                     )),
                 const SizedBox(height: 6),
                 Text("Let's build something together :)",
                     style: GoogleFonts.inter(
-                      color: Colors.white70,
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white54
+                          : Colors.grey,
                       fontSize: 14,
                     )),
                 const SizedBox(height: 40),
@@ -223,7 +243,7 @@ class _ContactState extends State<Contact> {
                         Container(
                           width: 160,
                           decoration: BoxDecoration(
-                            color: greenColor,
+                            color: primaryColor,
                             borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(8),
                                 topRight: Radius.circular(8)),
@@ -231,7 +251,7 @@ class _ContactState extends State<Contact> {
                           padding: const EdgeInsets.all(12),
                           child: Center(
                             child: Text(
-                              "June",
+                              month,
                               style: GoogleFonts.inter(
                                   fontSize: 18,
                                   fontWeight: FontWeight.w700,
@@ -242,7 +262,11 @@ class _ContactState extends State<Contact> {
                         Container(
                           width: 160,
                           decoration: BoxDecoration(
-                            color: Colors.black,
+                            color:
+                                Theme.of(context).brightness == Brightness.dark
+                                    ? Colors.black
+                                    : Colors.grey,
+                            // color: Colors.black,
                             borderRadius: const BorderRadius.only(
                                 bottomLeft: Radius.circular(8),
                                 bottomRight: Radius.circular(8)),
@@ -252,7 +276,7 @@ class _ContactState extends State<Contact> {
                           child: Column(
                             children: [
                               Text(
-                                "24",
+                                date,
                                 style: GoogleFonts.inter(
                                     fontSize: 38,
                                     fontWeight: FontWeight.w800,
@@ -260,7 +284,7 @@ class _ContactState extends State<Contact> {
                               ),
                               const SizedBox(height: 10),
                               Text(
-                                "Tuesday",
+                                day,
                                 style: GoogleFonts.inter(
                                     fontSize: 14, color: Colors.white),
                               )
@@ -295,7 +319,7 @@ class _ContactState extends State<Contact> {
                 ElevatedButton.icon(
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.black,
-                    backgroundColor: greenColor,
+                    backgroundColor: primaryColor,
                     padding: const EdgeInsets.symmetric(
                         horizontal: 20, vertical: 14),
                     shape: RoundedRectangleBorder(
@@ -323,7 +347,10 @@ class _ContactState extends State<Contact> {
                             constraints: const BoxConstraints(),
                             icon: Image.network(
                               e.value.icon,
-                              color: ThemeColor.textColor,
+                              color: Theme.of(context).brightness ==
+                                      Brightness.dark
+                                  ? ThemeColor.textColor
+                                  : Colors.black,
                               width: 20,
                               height: 20,
                             ),
@@ -340,7 +367,11 @@ class _ContactState extends State<Contact> {
                 Text.rich(
                   TextSpan(
                     text: 'Designed & Crafted by ',
-                    style: GoogleFonts.inter(color: Colors.white54),
+                    style: GoogleFonts.inter(
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white54
+                          : Colors.grey,
+                    ),
                     children: [
                       TextSpan(
                         text: ' Muhammad Saim Arshad',
@@ -362,14 +393,16 @@ class _ContactState extends State<Contact> {
                 ),
                 Text("Get in touch",
                     style: GoogleFonts.inter(
-                      color: greenColor,
+                      color: primaryColor,
                       fontSize: 24,
                       fontWeight: FontWeight.w700,
                     )),
                 const SizedBox(height: 6),
                 Text("Let's build something together :)",
                     style: GoogleFonts.inter(
-                      color: Colors.white70,
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white54
+                          : Colors.grey,
                       fontSize: 14,
                     )),
                 const SizedBox(height: 40),
@@ -384,7 +417,7 @@ class _ContactState extends State<Contact> {
                         Container(
                           width: 160,
                           decoration: BoxDecoration(
-                            color: greenColor,
+                            color: primaryColor,
                             borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(8),
                                 topRight: Radius.circular(8)),
@@ -392,7 +425,7 @@ class _ContactState extends State<Contact> {
                           padding: const EdgeInsets.all(12),
                           child: Center(
                             child: Text(
-                              "June",
+                              month,
                               style: GoogleFonts.inter(
                                   fontSize: 18,
                                   fontWeight: FontWeight.w700,
@@ -403,7 +436,10 @@ class _ContactState extends State<Contact> {
                         Container(
                           width: 160,
                           decoration: BoxDecoration(
-                            color: Colors.black,
+                            color:
+                                Theme.of(context).brightness == Brightness.dark
+                                    ? Colors.black
+                                    : Colors.grey,
                             borderRadius: const BorderRadius.only(
                                 bottomLeft: Radius.circular(8),
                                 bottomRight: Radius.circular(8)),
@@ -413,7 +449,7 @@ class _ContactState extends State<Contact> {
                           child: Column(
                             children: [
                               Text(
-                                "24",
+                                date,
                                 style: GoogleFonts.inter(
                                     fontSize: 38,
                                     fontWeight: FontWeight.w800,
@@ -421,7 +457,7 @@ class _ContactState extends State<Contact> {
                               ),
                               const SizedBox(height: 10),
                               Text(
-                                "Tuesday",
+                                day,
                                 style: GoogleFonts.inter(
                                     fontSize: 14, color: Colors.white),
                               )
@@ -456,7 +492,7 @@ class _ContactState extends State<Contact> {
                 ElevatedButton.icon(
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.black,
-                    backgroundColor: greenColor,
+                    backgroundColor: primaryColor,
                     padding: const EdgeInsets.symmetric(
                         horizontal: 20, vertical: 14),
                     shape: RoundedRectangleBorder(
@@ -484,7 +520,10 @@ class _ContactState extends State<Contact> {
                             constraints: const BoxConstraints(),
                             icon: Image.network(
                               e.value.icon,
-                              color: ThemeColor.textColor,
+                              color: Theme.of(context).brightness ==
+                                      Brightness.dark
+                                  ? ThemeColor.textColor
+                                  : Colors.black,
                               width: 20,
                               height: 20,
                             ),
@@ -501,11 +540,15 @@ class _ContactState extends State<Contact> {
                 Text.rich(
                   TextSpan(
                     text: 'Designed & Crafted by ',
-                    style: GoogleFonts.inter(color: Colors.white54),
+                    style: GoogleFonts.inter(
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white54
+                          : Colors.grey,
+                    ),
                     children: [
                       TextSpan(
                         text: ' Muhammad Saim Arshad',
-                        style: GoogleFonts.inter(color: greenColor),
+                        style: GoogleFonts.inter(color: primaryColor),
                       ),
                     ],
                   ),
@@ -514,45 +557,6 @@ class _ContactState extends State<Contact> {
             ),
           ),
         ));
-  }
-}
-
-class ContactButton extends StatelessWidget {
-  final IconData icon;
-  final String text;
-
-  const ContactButton({
-    super.key,
-    required this.icon,
-    required this.text,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const greenColor = Color(0xFF4EFFA5);
-
-    return Container(
-      width: 240,
-      padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
-      decoration: BoxDecoration(
-        color: const Color(0xFF25262B),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Row(
-        children: [
-          Icon(icon, color: greenColor, size: 20),
-          const SizedBox(width: 10),
-          Expanded(
-            child: Text(
-              text,
-              style: GoogleFonts.inter(color: greenColor, fontSize: 14),
-              overflow: TextOverflow.ellipsis,
-            ),
-          ),
-          const Icon(Icons.arrow_forward_ios, color: greenColor, size: 14)
-        ],
-      ),
-    );
   }
 }
 
@@ -571,7 +575,7 @@ class SocialIcon extends StatelessWidget {
       child: CircleAvatar(
         radius: 20,
         backgroundColor: const Color(0xFF25262B),
-        child: Icon(icon, color: greenColor, size: 16),
+        child: Icon(icon, color: primaryColor, size: 16),
       ),
     );
   }
