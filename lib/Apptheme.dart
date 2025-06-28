@@ -150,7 +150,7 @@ Color lightBackgroundColor = const Color(0xFFffffff);
 
 Color lightTextColor = const Color(0xFF7D7E83);
 
-Color darkBackgroundColor = const Color(0xFF25262A);
+Color darkBackgroundColor = Color(0xFF2d2e32);
 
 Color darkTextColor = const Color(0xFF25262A);
 

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_protfolio/screen/MobileDrawer.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
-
 import '../Apptheme.dart';
 import '../Util/responsive.dart';
 import '../controller/drawerController.dart';
@@ -69,6 +68,7 @@ class _BGState extends State<BG> {
                   ),
                 ),
               ),
+
               Positioned(
                 bottom: 0,
                 right: -100,
@@ -92,13 +92,14 @@ class _BGState extends State<BG> {
                   ),
                 ),
               ),
+
               // if (!Get.isDarkMode)
               //   Align(
               //     alignment: Alignment.center,
               //     // BG01.png
               //     child: Image.asset(
-              //       // StaticImage.bg,
-              //       "assets/imgs/5424482.jpg",
+              //       StaticImage.bg,
+              //       // "assets/imgs/5424482.jpg",
               //       opacity: const AlwaysStoppedAnimation<double>(0.2),
               //       width: width,
               //       height: height,
