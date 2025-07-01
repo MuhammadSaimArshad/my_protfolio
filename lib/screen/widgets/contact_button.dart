@@ -17,7 +17,8 @@ class ContactButton extends StatelessWidget {
     const greenColor = Color(0xFF4EFFA5);
 
     return Container(
-      width: 240,
+      height: 70,
+      width: 350,
       padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
       decoration: BoxDecoration(
         color: Theme.of(context).brightness == Brightness.dark
@@ -28,6 +29,7 @@ class ContactButton extends StatelessWidget {
       ),
       child: Row(
         children: [
+          const SizedBox(width: 10),
           Icon(icon, color: primaryColor, size: 20),
           const SizedBox(width: 10),
           Expanded(
@@ -37,7 +39,7 @@ class ContactButton extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
             ),
           ),
-          const Icon(Icons.arrow_forward_ios, color: primaryColor, size: 14)
+          const Icon(Icons.arrow_forward_ios, color: primaryColor, size: 16)
         ],
       ),
     );

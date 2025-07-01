@@ -62,8 +62,8 @@ class _HomePageState extends State<HomePage> {
                         Space.y(0.5.w)!,
                         Text(StringTheme.yourname,
                             style: const TextStyle(
-                              fontSize: 50,
-                              fontWeight: FontWeight.w600,
+                              fontSize: 35,
+                              fontWeight: FontWeight.w500,
                             )),
                         Row(
                           // mainAxisSize: MainAxisSize.min,

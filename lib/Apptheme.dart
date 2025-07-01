@@ -12,6 +12,16 @@ class AppTheme {
     return isDarkTheme ? ThemeColors.lightTheme : ThemeColors.darkTheme;
   }
 
+  TextStyle stylishNameStyle(BuildContext context) {
+    return GoogleFonts.stylish(
+      color: Theme.of(context).brightness == Brightness.dark
+          ? Colors.white
+          : Colors.black,
+      fontWeight: FontWeight.w100,
+      fontSize: MediaQuery.of(context).size.width > 1024 ? 32 : 20,
+    );
+  }
+
   static Row nameLogo(BuildContext context) {
     var textSty = GoogleFonts.stylish(
       color: Theme.of(context).brightness == Brightness.dark
@@ -23,7 +33,7 @@ class AppTheme {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text("< ", style: textSty),
+        Text("<\ ", style: textSty),
         Text(StringTheme.name, style: textSty),
         Text(
           Responsive.isDesktop(context) ? " />\t\t" : " />",

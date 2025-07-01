@@ -1,21 +1,12 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart' show GoogleFonts;
-import 'package:my_protfolio/Util/colorChangebuttom.dart';
 import 'package:my_protfolio/model/experience_model.dart';
 import 'package:my_protfolio/screen/home.dart';
 import 'package:my_protfolio/screen/widgets/desktop_experience_card.dart';
 import 'package:my_protfolio/screen/widgets/mobile_experirnce_card.dart';
 import 'package:my_protfolio/screen/widgets/tablet_experience_card.dart';
-import 'package:my_protfolio/screen/widgets/tech_bullet.dart' show TechBullet;
-import 'package:sizer/sizer.dart';
-
 import '../Apptheme.dart';
-import '../Util/String.dart';
 import '../Util/responsive.dart';
-import '../Util/service_card.dart';
-import '../Util/sizedbox.dart';
-import '../model/services_model.dart';
 
 class Services extends StatefulWidget {
   const Services({super.key});
@@ -183,25 +174,22 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
                       buildCategory("Web development", [
                         buildTechChip("HTML 5", Icons.language),
                         buildTechChip("CSS 3", Icons.style),
-                        buildTechChip("Bootstrap", Icons.widgets),
-                        buildTechChip("Javascript", Icons.javascript),
                       ]),
                       buildCategory("Server side", [
-                        buildTechChip("Flask Restful", Icons.science),
-                        buildTechChip("Node.js", Icons.memory),
-                        buildTechChip("Express.js", Icons.merge_type),
+                        // buildTechChip("Flask Restful", Icons.science),
+                        // buildTechChip("Node.js", Icons.memory),
+                        // buildTechChip("Express.js", Icons.merge_type),
                         buildTechChip("REST APIs", Icons.api),
-                        buildTechChip("Dart Frog", Icons.bug_report),
                       ]),
                       buildCategory("Databases", [
                         buildTechChip("Firebase", Icons.cloud),
-                        buildTechChip("MongoDB", Icons.storage),
-                        buildTechChip("Postgres SQL", Icons.dataset_linked),
+                        buildTechChip("SQLite", Icons.storage),
+                        // buildTechChip("Postgres SQL", Icons.dataset_linked),
                       ]),
                       buildCategory("Version controlling & management", [
                         buildTechChip("GitHub", Icons.code_off),
-                        buildTechChip("Jira", Icons.assignment_turned_in),
-                        buildTechChip("Notion", Icons.note),
+                        buildTechChip("Git", Icons.code),
+                        // buildTechChip("Notion", Icons.note),
                       ]),
                       buildCategory("UI/UX Design", [
                         buildTechChip("Figma", Icons.design_services),
@@ -221,137 +209,6 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
                   ),
                 ],
               ),
-              SizedBox(height: 30),
-              Container(
-                color: Theme.of(context).brightness == Brightness.dark
-                    ? bgColor
-                    : Colors.white,
-                // color: bgColor,
-                padding: const EdgeInsets.symmetric(vertical: 60),
-                width: double.infinity,
-                child: Column(
-                  children: [
-                    // Heading
-                    Text(
-                      "Experience",
-                      style: GoogleFonts.inter(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w700,
-                        color: primaryColor,
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      "Reflection of what I’ve been doing so far, so long.",
-                      style: GoogleFonts.inter(
-                        fontSize: 14,
-                        color: Theme.of(context).brightness == Brightness.dark
-                            ? Colors.white70
-                            : Colors.grey,
-                      ),
-                    ),
-                    const SizedBox(height: 50),
-
-                    // Experience Card
-                    DesktopExperienceCard(
-                      data: ExperienceModel(
-                        company: "7 Skies Solution",
-                        role: "Flutter Developer",
-                        duration: "Feb 2023 - Sep 2024",
-                        technologies: [
-                          "Flutter",
-                          "Dart",
-                          "Firebase",
-                          "REST APIs"
-                        ],
-                        responsibilities: [
-                          "Working with flutter_bloc state management, alongside provider",
-                          "Integrated payment gateways into flutter app with REST APIs",
-                          "Handled local packages to maintain custom components",
-                          "Maintaining layered architecture for better encapsulation",
-                          "Learned GitHub actions for CI/CD",
-                          "Worked with various env. flavors (dev, qa, prod)",
-                          "Integration of REST APIs, Firebase and caching",
-                        ],
-                      ),
-                    ),
-
-                    SizedBox(height: 20),
-                    // Experience Card
-                    DesktopExperienceCard(
-                      data: ExperienceModel(
-                        company: "Hisley Tech",
-                        role: "Flutter Developer",
-                        duration: "Sep 2024 - Oct 2024",
-                        technologies: [
-                          "Flutter",
-                          "Dart",
-                          "Firebase",
-                          "REST APIs"
-                        ],
-                        responsibilities: [
-                          "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases",
-                          "Integrated payment gateways into flutter app with REST APIs",
-                          "Handled local packages to maintain custom components and to maintain API architecture",
-                          "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer",
-                          "Learned GitHub actions for CI/CD",
-                          "Worked with various env. flavors in flutter app (dev, qa, stage, prod)",
-                          "Integration of REST APIs, Firebase and local cached concepts for better user experience",
-                        ],
-                      ),
-                    ),
-
-                    SizedBox(height: 20),
-                    // Experience Card
-                    DesktopExperienceCard(
-                      data: ExperienceModel(
-                        company: "IT Solera",
-                        role: "Flutter Developer",
-                        duration: "Oct 2024 - Nov 2024",
-                        technologies: [
-                          "Flutter",
-                          "Dart",
-                          "Firebase",
-                          "REST APIs"
-                        ],
-                        responsibilities: [
-                          "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases",
-                          "Integrated payment gateways into flutter app with REST APIs",
-                          "Handled local packages to maintain custom components and to maintain API architecture",
-                          "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer",
-                          "Learned GitHub actions for CI/CD",
-                          "Worked with various env. flavors in flutter app (dev, qa, stage, prod)",
-                          "Integration of REST APIs, Firebase and local cached concepts for better user experience",
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    // Experience Card
-                    DesktopExperienceCard(
-                      data: ExperienceModel(
-                        company: "Green Tech",
-                        role: "Flutter Developer",
-                        duration: "Present",
-                        technologies: [
-                          "Flutter",
-                          "Dart",
-                          "Firebase",
-                          "REST APIs"
-                        ],
-                        responsibilities: [
-                          "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases",
-                          "Integrated payment gateways into flutter app with REST APIs",
-                          "Handled local packages to maintain custom components and to maintain API architecture",
-                          "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer",
-                          "Learned GitHub actions for CI/CD",
-                          "Worked with various env. flavors in flutter app (dev, qa, stage, prod)",
-                          "Integration of REST APIs, Firebase and local cached concepts for better user experience",
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              )
             ],
           ),
           tablet: Column(
@@ -508,19 +365,22 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
                         buildCategory("Web development", [
                           buildTechChip("HTML 5", Icons.language),
                           buildTechChip("CSS 3", Icons.style),
-                          buildTechChip("Javascript", Icons.javascript),
                         ]),
                         buildCategory("Server side", [
-                          buildTechChip("Node.js", Icons.memory),
+                          // buildTechChip("Flask Restful", Icons.science),
+                          // buildTechChip("Node.js", Icons.memory),
+                          // buildTechChip("Express.js", Icons.merge_type),
                           buildTechChip("REST APIs", Icons.api),
                         ]),
                         buildCategory("Databases", [
                           buildTechChip("Firebase", Icons.cloud),
-                          buildTechChip("MongoDB", Icons.storage),
+                          buildTechChip("SQLite", Icons.storage),
+                          // buildTechChip("Postgres SQL", Icons.dataset_linked),
                         ]),
                         buildCategory("Version controlling & management", [
                           buildTechChip("GitHub", Icons.code_off),
-                          buildTechChip("Jira", Icons.assignment_turned_in),
+                          buildTechChip("Git", Icons.code),
+                          // buildTechChip("Notion", Icons.note),
                         ]),
                         buildCategory("UI/UX Design", [
                           buildTechChip("Figma", Icons.design_services),
@@ -545,135 +405,6 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
                   ),
                 ],
               ),
-              Container(
-                color: Theme.of(context).brightness == Brightness.dark
-                    ? bgColor
-                    : Colors.white,
-                padding: const EdgeInsets.symmetric(vertical: 60),
-                width: double.infinity,
-                child: Column(
-                  children: [
-                    // Heading
-                    Text(
-                      "Experience",
-                      style: GoogleFonts.inter(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w700,
-                        color: primaryColor,
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      "Reflection of what I’ve been doing so far, so long.",
-                      style: GoogleFonts.inter(
-                        fontSize: 14,
-                        color: Theme.of(context).brightness == Brightness.dark
-                            ? Colors.white70
-                            : Colors.grey,
-                      ),
-                    ),
-                    const SizedBox(height: 50),
-
-                    // Experience Card
-                    TabletExperienceCard(
-                      data: ExperienceModel(
-                        company: "7 Skies Solution",
-                        role: "Flutter Developer",
-                        duration: "Feb 2023 - Sep 2024",
-                        technologies: [
-                          "Flutter",
-                          "Dart",
-                          "Firebase",
-                          "REST APIs"
-                        ],
-                        responsibilities: [
-                          "Working with flutter_bloc state management, alongside provider",
-                          "Integrated payment gateways into flutter app with REST APIs",
-                          "Handled local packages to maintain custom components",
-                          "Maintaining layered architecture for better encapsulation",
-                          "Learned GitHub actions for CI/CD",
-                          "Worked with various env. flavors (dev, qa, prod)",
-                          "Integration of REST APIs, Firebase and caching",
-                        ],
-                      ),
-                    ),
-
-                    SizedBox(height: 20),
-                    // Experience Card
-                    TabletExperienceCard(
-                      data: ExperienceModel(
-                        company: "Hisley Tech",
-                        role: "Flutter Developer",
-                        duration: "Sep 2024 - Oct 2024",
-                        technologies: [
-                          "Flutter",
-                          "Dart",
-                          "Firebase",
-                          "REST APIs"
-                        ],
-                        responsibilities: [
-                          "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases",
-                          "Integrated payment gateways into flutter app with REST APIs",
-                          "Handled local packages to maintain custom components and to maintain API architecture",
-                          "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer",
-                          "Learned GitHub actions for CI/CD",
-                          "Worked with various env. flavors in flutter app (dev, qa, stage, prod)",
-                          "Integration of REST APIs, Firebase and local cached concepts for better user experience",
-                        ],
-                      ),
-                    ),
-
-                    SizedBox(height: 20),
-                    // Experience Card
-                    TabletExperienceCard(
-                      data: ExperienceModel(
-                        company: "IT Solera",
-                        role: "Flutter Developer",
-                        duration: "Oct 2024 - Nov 2024",
-                        technologies: [
-                          "Flutter",
-                          "Dart",
-                          "Firebase",
-                          "REST APIs"
-                        ],
-                        responsibilities: [
-                          "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases",
-                          "Integrated payment gateways into flutter app with REST APIs",
-                          "Handled local packages to maintain custom components and to maintain API architecture",
-                          "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer",
-                          "Learned GitHub actions for CI/CD",
-                          "Worked with various env. flavors in flutter app (dev, qa, stage, prod)",
-                          "Integration of REST APIs, Firebase and local cached concepts for better user experience",
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    // Experience Card
-                    TabletExperienceCard(
-                      data: ExperienceModel(
-                        company: "Green Tech",
-                        role: "Flutter Developer",
-                        duration: "Present",
-                        technologies: [
-                          "Flutter",
-                          "Dart",
-                          "Firebase",
-                          "REST APIs"
-                        ],
-                        responsibilities: [
-                          "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases",
-                          "Integrated payment gateways into flutter app with REST APIs",
-                          "Handled local packages to maintain custom components and to maintain API architecture",
-                          "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer",
-                          "Learned GitHub actions for CI/CD",
-                          "Worked with various env. flavors in flutter app (dev, qa, stage, prod)",
-                          "Integration of REST APIs, Firebase and local cached concepts for better user experience",
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              )
             ],
           ),
           mobile: Column(children: [
@@ -830,19 +561,22 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
                         buildCategory("Web development", [
                           buildTechChip("HTML 5", Icons.language),
                           buildTechChip("CSS 3", Icons.style),
-                          buildTechChip("Javascript", Icons.javascript),
                         ]),
                         buildCategory("Server side", [
-                          buildTechChip("Node.js", Icons.memory),
+                          // buildTechChip("Flask Restful", Icons.science),
+                          // buildTechChip("Node.js", Icons.memory),
+                          // buildTechChip("Express.js", Icons.merge_type),
                           buildTechChip("REST APIs", Icons.api),
                         ]),
                         buildCategory("Databases", [
                           buildTechChip("Firebase", Icons.cloud),
-                          buildTechChip("MongoDB", Icons.storage),
+                          buildTechChip("SQLite", Icons.storage),
+                          // buildTechChip("Postgres SQL", Icons.dataset_linked),
                         ]),
                         buildCategory("Version controlling & management", [
                           buildTechChip("GitHub", Icons.code_off),
-                          buildTechChip("Jira", Icons.assignment_turned_in),
+                          buildTechChip("Git", Icons.code),
+                          // buildTechChip("Notion", Icons.note),
                         ]),
                         buildCategory("UI/UX Design", [
                           buildTechChip("Figma", Icons.design_services),
@@ -861,135 +595,6 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
                     ),
                   ),
                 ]),
-            Container(
-              color: Theme.of(context).brightness == Brightness.dark
-                  ? bgColor
-                  : Colors.white,
-              padding: const EdgeInsets.symmetric(vertical: 60),
-              width: double.infinity,
-              child: Column(
-                children: [
-                  // Heading
-                  Text(
-                    "Experience",
-                    style: GoogleFonts.inter(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w700,
-                      color: primaryColor,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    "Reflection of what I’ve been doing so far, so long.",
-                    style: GoogleFonts.inter(
-                      fontSize: 14,
-                      color: Theme.of(context).brightness == Brightness.dark
-                          ? Colors.white70
-                          : Colors.grey,
-                    ),
-                  ),
-                  const SizedBox(height: 50),
-
-                  // Experience Card
-                  MobileExperienceCard(
-                    data: ExperienceModel(
-                      company: "7 Skies Solution",
-                      role: "Flutter Developer",
-                      duration: "Feb 2023 - Sep 2024",
-                      technologies: [
-                        "Flutter",
-                        "Dart",
-                        "Firebase",
-                        "REST APIs"
-                      ],
-                      responsibilities: [
-                        "Working with flutter_bloc state management, alongside provider",
-                        "Integrated payment gateways into flutter app with REST APIs",
-                        "Handled local packages to maintain custom components",
-                        "Maintaining layered architecture for better encapsulation",
-                        "Learned GitHub actions for CI/CD",
-                        "Worked with various env. flavors (dev, qa, prod)",
-                        "Integration of REST APIs, Firebase and caching",
-                      ],
-                    ),
-                  ),
-
-                  SizedBox(height: 20),
-                  // Experience Card
-                  MobileExperienceCard(
-                    data: ExperienceModel(
-                      company: "Hisley Tech",
-                      role: "Flutter Developer",
-                      duration: "Sep 2024 - Oct 2024",
-                      technologies: [
-                        "Flutter",
-                        "Dart",
-                        "Firebase",
-                        "REST APIs"
-                      ],
-                      responsibilities: [
-                        "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases",
-                        "Integrated payment gateways into flutter app with REST APIs",
-                        "Handled local packages to maintain custom components and to maintain API architecture",
-                        "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer",
-                        "Learned GitHub actions for CI/CD",
-                        "Worked with various env. flavors in flutter app (dev, qa, stage, prod)",
-                        "Integration of REST APIs, Firebase and local cached concepts for better user experience",
-                      ],
-                    ),
-                  ),
-
-                  SizedBox(height: 20),
-                  // Experience Card
-                  MobileExperienceCard(
-                    data: ExperienceModel(
-                      company: "IT Solera",
-                      role: "Flutter Developer",
-                      duration: "Oct 2024 - Nov 2024",
-                      technologies: [
-                        "Flutter",
-                        "Dart",
-                        "Firebase",
-                        "REST APIs"
-                      ],
-                      responsibilities: [
-                        "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases",
-                        "Integrated payment gateways into flutter app with REST APIs",
-                        "Handled local packages to maintain custom components and to maintain API architecture",
-                        "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer",
-                        "Learned GitHub actions for CI/CD",
-                        "Worked with various env. flavors in flutter app (dev, qa, stage, prod)",
-                        "Integration of REST APIs, Firebase and local cached concepts for better user experience",
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  // Experience Card
-                  MobileExperienceCard(
-                    data: ExperienceModel(
-                      company: "Green Tech",
-                      role: "Flutter Developer",
-                      duration: "Present",
-                      technologies: [
-                        "Flutter",
-                        "Dart",
-                        "Firebase",
-                        "REST APIs"
-                      ],
-                      responsibilities: [
-                        "Working with flutter_bloc state management, alongside provider to maintain local states and global use cases",
-                        "Integrated payment gateways into flutter app with REST APIs",
-                        "Handled local packages to maintain custom components and to maintain API architecture",
-                        "Maintaining layered architecture for better encapsulation and abstraction of code from Application layer to domain layer and to data layer",
-                        "Learned GitHub actions for CI/CD",
-                        "Worked with various env. flavors in flutter app (dev, qa, stage, prod)",
-                        "Integration of REST APIs, Firebase and local cached concepts for better user experience",
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            )
           ]),
         ));
   }

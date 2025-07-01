@@ -42,7 +42,7 @@ class StringTheme {
 
   static String animationtxt1 = " Software Engineering";
   static String animationtxt2 = " Mobile App Developer";
-  static String animationtxt3 = " Web Developer";
+  // static String animationtxt3 = " Web Developer";
 
   static String contactHeadding = 'Let’s try my service now!';
   static String contactSubHeadding =
@@ -65,18 +65,18 @@ class StringTheme {
     TyperAnimatedText(animationtxt1,
         speed: const Duration(milliseconds: 70),
         textStyle: GoogleFonts.poppins(
-          fontSize: 32,
+          fontSize: 23,
         )),
     TyperAnimatedText(animationtxt2,
         speed: const Duration(milliseconds: 70),
         textStyle: GoogleFonts.poppins(
-          fontSize: 32,
+          fontSize: 23,
         )),
-    TyperAnimatedText(animationtxt3,
-        speed: const Duration(milliseconds: 70),
-        textStyle: GoogleFonts.poppins(
-          fontSize: 32,
-        ))
+    // TyperAnimatedText(animationtxt3,
+    //     speed: const Duration(milliseconds: 70),
+    //     textStyle: GoogleFonts.poppins(
+    //       fontSize: 23,
+    //     ))
   ];
 
   static List<TyperAnimatedText> tabList = [
@@ -90,11 +90,11 @@ class StringTheme {
         textStyle: GoogleFonts.poppins(
           fontSize: 20,
         )),
-    TyperAnimatedText(animationtxt3,
-        speed: const Duration(milliseconds: 70),
-        textStyle: GoogleFonts.poppins(
-          fontSize: 20,
-        ))
+    // TyperAnimatedText(animationtxt3,
+    //     speed: const Duration(milliseconds: 70),
+    //     textStyle: GoogleFonts.poppins(
+    //       fontSize: 20,
+    //     ))
   ];
   static List<TyperAnimatedText> mobileList = [
     TyperAnimatedText(animationtxt1,
@@ -107,10 +107,10 @@ class StringTheme {
         textStyle: GoogleFonts.poppins(
           fontSize: 16,
         )),
-    TyperAnimatedText(animationtxt3,
-        speed: const Duration(milliseconds: 70),
-        textStyle: GoogleFonts.poppins(
-          fontSize: 16,
-        ))
+    // TyperAnimatedText(animationtxt3,
+    //     speed: const Duration(milliseconds: 70),
+    //     textStyle: GoogleFonts.poppins(
+    //       fontSize: 16,
+    //     ))
   ];
 }

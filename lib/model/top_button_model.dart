@@ -17,6 +17,10 @@ class TopButtonModel {
       icon: Icons.work,
     ),
     TopButtonModel(
+      name: 'Experience',
+      icon: Icons.history_edu,
+    ),
+    TopButtonModel(
       name: 'WORKS',
       icon: Icons.build,
     ),

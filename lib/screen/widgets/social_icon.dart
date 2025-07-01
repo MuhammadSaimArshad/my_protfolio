@@ -14,7 +14,7 @@ class SocialIcon extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: CircleAvatar(
-        radius: 20,
+        radius: 30,
         backgroundColor: const Color(0xFF25262B),
         child: Icon(icon, color: primaryColor, size: 16),
       ),
