@@ -9,8 +9,6 @@ class SocialIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const greenColor = Color(0xFF4EFFA5);
-
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: CircleAvatar(

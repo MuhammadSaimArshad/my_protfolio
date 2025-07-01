@@ -1,8 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-
 import 'package:sizer/sizer.dart';
-
 import '../Apptheme.dart';
 import '../Util/String.dart';
 import '../Util/colorChangebuttom.dart';
@@ -20,6 +18,7 @@ class Projects extends StatefulWidget {
 }
 
 class _ProjectsState extends State<Projects> {
+  // ignore: prefer_typing_uninitialized_variables
   var height, width;
   bool isHover = false;
   @override

@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-
 import '../Apptheme.dart';
 import 'responsive.dart';
 
 class ColorChageButton extends StatefulWidget {
   final String text;
   final Function() onTap;
-  const ColorChageButton({Key? key, required this.text, required this.onTap})
-      : super(key: key);
+  const ColorChageButton({super.key, required this.text, required this.onTap});
 
   @override
   State<ColorChageButton> createState() => _ColorChageButtonState();

@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import 'package:sizer/sizer.dart';
-
 import '../Apptheme.dart';
-import '../Util/String.dart';
-import '../Util/colorChangebuttom.dart';
-import '../Util/sizedbox.dart';
 import '../controller/scrolling_controller.dart';
 import '../model/top_button_model.dart';
-import '../staticdata.dart';
 
 class MobileDrawer extends StatefulWidget {
-  const MobileDrawer({Key? key}) : super(key: key);
+  const MobileDrawer({super.key});
 
   @override
   State<MobileDrawer> createState() => _MobileDrawerState();
@@ -32,7 +26,6 @@ class _MobileDrawerState extends State<MobileDrawer> {
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Center(child: AppTheme.nameLogo(context)),
-
             ListTile(
               contentPadding: EdgeInsets.symmetric(horizontal: 30, vertical: 4),
               visualDensity: VisualDensity(
@@ -58,7 +51,6 @@ class _MobileDrawerState extends State<MobileDrawer> {
                 ),
               ),
             ),
-
             ...TopButtonModel.list.asMap().entries.map<Widget>(
                   (MapEntry<int, TopButtonModel> e) => Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -82,13 +74,6 @@ class _MobileDrawerState extends State<MobileDrawer> {
                     ),
                   ),
                 ),
-            // Space.y(5.w)!,
-            // ColorChageButton(
-            //   text: 'RESUME',
-            //   onTap: () {
-            //     StaticData.openURL(StringTheme.resume);
-            //   },
-            // ),
           ],
         ),
       ),

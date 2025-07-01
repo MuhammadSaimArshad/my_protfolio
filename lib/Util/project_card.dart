@@ -10,7 +10,7 @@ import 'responsive.dart';
 class ProjectCard extends StatefulWidget {
   final ProjectModel project;
 
-  const ProjectCard({Key? key, required this.project}) : super(key: key);
+  const ProjectCard({super.key, required this.project});
   @override
   ProjectCardState createState() => ProjectCardState();
 }
@@ -22,7 +22,7 @@ class ProjectCardState extends State<ProjectCard> {
   Widget build(BuildContext context) {
     // double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    var theme = Theme.of(context);
+    Theme.of(context);
     return InkWell(
       hoverColor: Colors.transparent,
       splashColor: Colors.transparent,

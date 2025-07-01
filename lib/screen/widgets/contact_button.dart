@@ -14,8 +14,6 @@ class ContactButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const greenColor = Color(0xFF4EFFA5);
-
     return Container(
       height: 70,
       width: 350,

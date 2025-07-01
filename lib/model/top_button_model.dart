@@ -21,7 +21,7 @@ class TopButtonModel {
       icon: Icons.history_edu,
     ),
     TopButtonModel(
-      name: 'WORKS',
+      name: 'Projects',
       icon: Icons.build,
     ),
     TopButtonModel(

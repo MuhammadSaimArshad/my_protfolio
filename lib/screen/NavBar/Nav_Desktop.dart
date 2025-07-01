@@ -6,7 +6,7 @@ import '../../Util/topButton.dart';
 import '../../model/top_button_model.dart';
 
 class NavbarDesktop extends StatefulWidget {
-  const NavbarDesktop({Key? key}) : super(key: key);
+  const NavbarDesktop({super.key});
 
   @override
   State<NavbarDesktop> createState() => _NavbarDesktopState();

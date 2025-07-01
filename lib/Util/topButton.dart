@@ -8,10 +8,10 @@ class TopButton extends StatefulWidget {
   final String label;
   final int index;
   const TopButton({
-    Key? key,
+    super.key,
     required this.label,
     required this.index,
-  }) : super(key: key);
+  });
 
   @override
   State<TopButton> createState() => _TopButtonState();

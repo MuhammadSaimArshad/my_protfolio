@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_protfolio/model/services_model.dart';
-
 import 'package:sizer/sizer.dart';
-
 import '../Apptheme.dart';
 import 'responsive.dart';
 import 'sizedbox.dart';
@@ -10,7 +8,7 @@ import 'sizedbox.dart';
 class ServiceCard extends StatefulWidget {
   final ServicesModel service;
 
-  const ServiceCard({Key? key, required this.service}) : super(key: key);
+  const ServiceCard({super.key, required this.service});
 
   @override
   ServiceCardState createState() => ServiceCardState();
@@ -21,7 +19,7 @@ class ServiceCardState extends State<ServiceCard> {
 
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
+    Theme.of(context);
     return InkWell(
       hoverColor: Colors.transparent,
       splashColor: Colors.transparent,

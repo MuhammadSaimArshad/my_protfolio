@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart' show GoogleFonts;
-import 'package:my_protfolio/model/experience_model.dart';
 import 'package:my_protfolio/screen/home.dart';
-import 'package:my_protfolio/screen/widgets/desktop_experience_card.dart';
-import 'package:my_protfolio/screen/widgets/mobile_experirnce_card.dart';
-import 'package:my_protfolio/screen/widgets/tablet_experience_card.dart';
 import '../Apptheme.dart';
 import '../Util/responsive.dart';
 
@@ -20,8 +15,7 @@ class _ServicesState extends State<Services> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    const greenColor = Color(0xFF4EFFA5);
-    const bgColor = Color(0xFF1D1E22);
+
     return Container(
         padding: EdgeInsets.symmetric(horizontal: width / 9.9)
             .copyWith(bottom: height * 0.2),
@@ -216,7 +210,7 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
               SizedBox(
                 height: 30,
               ),
-              Container(
+              SizedBox(
                 height: 190,
                 width: double.infinity,
                 child: Wrap(
@@ -411,7 +405,7 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
             SizedBox(
               height: 30,
             ),
-            Container(
+            SizedBox(
               height: 370,
               width: double.infinity,
               child: Wrap(

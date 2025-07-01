@@ -22,8 +22,7 @@ class _ContactState extends State<Contact> {
   Widget build(BuildContext context) {
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
-    const greenColor = Color(0xFF4EFFA5);
-    const bgColor = Color(0xFF1D1E22);
+
     final now = DateTime.now();
     final String month = DateFormat.MMMM().format(now); // June
     final String day = DateFormat.EEEE().format(now); // Tuesday
@@ -734,24 +733,3 @@ class _ContactState extends State<Contact> {
     );
   }
 }
-
-// Social Media Icon Button
-// class SocialIcon extends StatelessWidget {
-//   final IconData icon;
-
-//   const SocialIcon(this.icon, {super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     const greenColor = Color(0xFF4EFFA5);
-
-//     return Padding(
-//       padding: const EdgeInsets.symmetric(horizontal: 8),
-//       child: CircleAvatar(
-//         radius: 30,
-//         backgroundColor: const Color(0xFF25262B),
-//         child: Icon(icon, color: primaryColor, size: 16),
-//       ),
-//     );
-//   }
-// }

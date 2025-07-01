@@ -1,17 +1,10 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-
-// import 'package:get/get.dart';
-
 import 'package:sizer/sizer.dart';
-
 import 'package:url_launcher/url_launcher.dart';
-
 import '../Animation/EntranceFader.dart';
 import '../Animation/image_animation.dart';
-import '../Apptheme.dart';
 import '../Util/String.dart';
-import '../Util/colorChangebuttom.dart';
 import '../Util/image.dart';
 import '../Util/responsive.dart';
 import '../Util/sizedbox.dart';
@@ -46,11 +39,6 @@ class _HomePageState extends State<HomePage> {
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            // Text(StringTheme.hellotag,
-                            //     style: const TextStyle(
-                            //       fontSize: 25,
-                            //       fontWeight: FontWeight.w100,
-                            //     )),
                             EntranceFader(
                               offset: const Offset(0, 0),
                               delay: const Duration(seconds: 2),
@@ -66,8 +54,6 @@ class _HomePageState extends State<HomePage> {
                               fontWeight: FontWeight.w500,
                             )),
                         Row(
-                          // mainAxisSize: MainAxisSize.min,
-                          // crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             AnimatedTextKit(
                               displayFullTextOnTap: true,
@@ -77,25 +63,6 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ],
                         ),
-                        Space.y(1.5.w)!,
-                        // Padding(
-                        //   padding: EdgeInsets.only(right: 10.w),
-                        //   child: Expanded(
-                        //     child: Text(StringTheme.miniDescription,
-                        //         style: TextStyle(
-                        //           fontSize: StaticData.isFontSize(context, 20),
-                        //           fontWeight: FontWeight.w400,
-                        //           color: ThemeColor.textColor.withOpacity(0.6),
-                        //         )),
-                        //   ),
-                        // ),
-                        Space.y(3.w)!,
-                        // ColorChageButton(
-                        //   text: StringTheme.download,
-                        //   onTap: () {
-                        //     downloadresume();
-                        //   },
-                        // ),
                       ],
                     ),
                   ),
@@ -127,10 +94,6 @@ class _HomePageState extends State<HomePage> {
                           Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              // Text(StringTheme.hellotag,
-                              //     style: GoogleFonts.poppins(
-                              //       fontSize: 18,
-                              //     )),
                               EntranceFader(
                                 offset: const Offset(0, 0),
                                 delay: const Duration(seconds: 2),
@@ -155,14 +118,6 @@ class _HomePageState extends State<HomePage> {
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                // Text(
-                                //   StringTheme.a,
-                                //   style: TextStyle(
-                                //     fontSize:
-                                //         StaticData.isFontSize(context, 24),
-                                //     fontWeight: FontWeight.w400,
-                                //   ),
-                                // ),
                                 AnimatedTextKit(
                                   animatedTexts: StringTheme.tabList,
                                   isRepeatingAnimation: true,
@@ -170,28 +125,6 @@ class _HomePageState extends State<HomePage> {
                               ],
                             ),
                           ),
-                          // Space.y(1.5.w)!,
-                          // Padding(
-                          //   padding: EdgeInsets.only(right: 50.w),
-                          //   child: Expanded(
-                          //     child: Text(
-                          //       StringTheme.miniDescription,
-                          //       style: TextStyle(
-                          //           fontSize:
-                          //               StaticData.isFontSize(context, 13),
-                          //           fontWeight: FontWeight.w100,
-                          //           color:
-                          //               ThemeColor.textColor.withOpacity(0.6)),
-                          //     ),
-                          //   ),
-                          // ),
-                          // Space.y(2.w)!,
-                          // ColorChageButton(
-                          //   text: StringTheme.download,
-                          //   onTap: () {
-                          //     downloadresume();
-                          //   },
-                          // ),
                         ],
                       ),
                     ),
@@ -206,17 +139,9 @@ class _HomePageState extends State<HomePage> {
                     Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        // Text(
-                        //   StringTheme.hellotag,
-                        //   style: GoogleFonts.poppins(
-                        //     fontSize: 16,
-                        //   ),
-                        // ),
-                        // Space.x!,
                         Image.asset(StaticImage.hi, height: 10.sp),
                       ],
                     ),
-                    // // Space.y(1.w)!,
                     Text(
                       StringTheme.yourname,
                       style: TextStyle(
@@ -228,13 +153,6 @@ class _HomePageState extends State<HomePage> {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        // Text(
-                        //   StringTheme.a,
-                        //   style: TextStyle(
-                        //     fontSize: StaticData.isFontSize(context, 18),
-                        //     fontWeight: FontWeight.w400,
-                        //   ),
-                        // ),
                         AnimatedTextKit(
                           animatedTexts: StringTheme.mobileList,
                           repeatForever: true,
@@ -242,17 +160,10 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
-
                     Space.y(2.w)!,
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        // ColorChageButton(
-                        //   text: StringTheme.download,
-                        //   onTap: () {
-                        //     downloadresume();
-                        //   },
-                        // ),
                         const EntranceFader(
                           offset: Offset(0, 0),
                           delay: Duration(seconds: 1),
