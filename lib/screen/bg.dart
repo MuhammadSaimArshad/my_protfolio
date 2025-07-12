@@ -26,6 +26,7 @@ class _BGState extends State<BG> {
     super.initState();
   }
 
+  // ignore: prefer_typing_uninitialized_variables
   var height, width;
   @override
   Widget build(BuildContext context) {
@@ -92,21 +93,6 @@ class _BGState extends State<BG> {
                   ),
                 ),
               ),
-
-              // if (!Get.isDarkMode)
-              //   Align(
-              //     alignment: Alignment.center,
-              //     // BG01.png
-              //     child: Image.asset(
-              //       StaticImage.bg,
-              //       // "assets/imgs/5424482.jpg",
-              //       opacity: const AlwaysStoppedAnimation<double>(0.2),
-              //       width: width,
-              //       height: height,
-              //       fit: BoxFit.cover,
-              //       alignment: Alignment.topCenter,
-              //     ),
-              //   ),
 
               ScrollablePositionedList.builder(
                 padding: EdgeInsets.zero,
