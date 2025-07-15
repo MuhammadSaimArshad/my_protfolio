@@ -23,7 +23,7 @@ class TabletExperienceCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Theme.of(context).brightness == Brightness.dark
             ? const Color(0xFF25262B)
-            : Colors.grey[400],
+            : Colors.grey,
         borderRadius: BorderRadius.circular(12),
       ),
       child: Row(
