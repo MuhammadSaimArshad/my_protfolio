@@ -20,7 +20,7 @@ class _NavbarDesktopState extends State<NavbarDesktop> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: size.width / 15, vertical: 10),
       color: Theme.of(context).brightness == Brightness.dark
-          ? Colors.black
+          ? Theme.of(context).scaffoldBackgroundColor
           : Colors.white,
       child: Row(
         children: [

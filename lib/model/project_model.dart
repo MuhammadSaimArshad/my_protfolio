@@ -29,7 +29,7 @@ class ProjectModel {
       links: 'https://github.com/MuhammadSaimArshad',
     ),
     ProjectModel(
-      banners: 'assets/imgs/praceltrck.png',
+      banners: 'assets/imgs/parcel.png',
       icons: 'assets/imgs/flutter.png',
       titles: 'Online Parcel Track App',
       description:
@@ -45,7 +45,7 @@ class ProjectModel {
       links: 'https://github.com/MuhammadSaimArshad',
     ),
     ProjectModel(
-      banners: 'assets/imgs/datingapp.png',
+      banners: 'assets/imgs/dating.png',
       icons: 'assets/imgs/flutter.png',
       titles: 'Dating App UI',
       description:
@@ -85,9 +85,25 @@ class ProjectModel {
       links: 'https://github.com/MuhammadSaimArshad',
     ),
     ProjectModel(
-      banners: 'assets/imgs/school ui.png',
+      banners: 'assets/imgs/school.png',
       icons: 'assets/imgs/flutter.png',
       titles: 'School Management App',
+      description:
+          'This app Fully functional using flutter, source code is also available, check below.',
+      links: 'https://github.com/MuhammadSaimArshad',
+    ),
+    ProjectModel(
+      banners: 'assets/imgs/sldapp.png',
+      icons: 'assets/imgs/flutter.png',
+      titles: 'SLD Application',
+      description:
+          'This app Fully functional using flutter, source code is also available, check below.',
+      links: 'https://github.com/MuhammadSaimArshad',
+    ),
+    ProjectModel(
+      banners: 'assets/imgs/newsapp.png',
+      icons: 'assets/imgs/flutter.png',
+      titles: 'News Media',
       description:
           'This app Fully functional using flutter, source code is also available, check below.',
       links: 'https://github.com/MuhammadSaimArshad',

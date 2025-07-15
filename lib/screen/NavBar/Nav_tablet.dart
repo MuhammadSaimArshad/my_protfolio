@@ -17,7 +17,9 @@ class _NavTabletState extends State<NavTablet> {
   Widget build(BuildContext context) {
     return Container(
       // color: Colors.green,
-      color: Get.isDarkMode ? ThemeColor.navBarColor : Colors.white,
+      color: Get.isDarkMode
+          ? Theme.of(context).scaffoldBackgroundColor
+          : Colors.white,
       padding: EdgeInsets.symmetric(
           horizontal: Responsive.isTablet(context) ? 10.w : 10, vertical: 10),
       child: Row(

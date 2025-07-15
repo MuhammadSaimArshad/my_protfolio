@@ -92,7 +92,7 @@ class ThemeColors {
     brightness: Brightness.dark,
     fontFamily: 'sans-serif',
     primaryColor: primaryColor,
-    scaffoldBackgroundColor: const Color(0xFF00040F),
+    scaffoldBackgroundColor: const Color(0xFF2D2E32),
     visualDensity: VisualDensity.adaptivePlatformDensity,
     colorScheme: ColorScheme.dark(
       background: darkBackgroundColor,
@@ -160,9 +160,9 @@ Color lightBackgroundColor = const Color(0xFFffffff);
 
 Color lightTextColor = const Color(0xFF7D7E83);
 
-Color darkBackgroundColor = Color(0xFF2d2e32);
+Color darkBackgroundColor = Color(0xFF504C48);
 
-Color darkTextColor = const Color(0xFF25262A);
+Color darkTextColor = const Color(0xFF2D2E32);
 
 const pinkpurple = LinearGradient(
   begin: Alignment.centerLeft,
