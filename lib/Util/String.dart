@@ -27,9 +27,10 @@ class StringTheme {
 //       "https://avatars.githubusercontent.com/u/136632321?s=400&u=2a454e53166dfa78f312634954374a2100163025&v=4";
 // //
 
-  // static String fiverr = 'https://github.com/jamalihassan0307';
+  static String fiverr = 'https://www.fiverr.com/saimdeve/';
 
-  // static String upwork = 'https://github.com/jamalihassan0307';
+  static String upwork =
+      'https://www.upwork.com/freelancers/~011b29dcf2db853806?mp_source=share';
 
   static String whatsapp = 'https://api.whatsapp.com/send?phone=923059895650';
 

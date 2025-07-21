@@ -14,4 +14,24 @@ class StaticData {
       return val;
     }
   }
+
+  static openWhatsAppChat() async {
+    try {
+      String url = "https://wa.me/+923059895650?text=Hello";
+
+      await launch(url);
+    } catch (e) {
+      print("errorr$e");
+    }
+  }
+
+  static openEmailChat() async {
+    try {
+      String url = 'mailto:saimarshad075@gmail.com';
+
+      await launch(url);
+    } catch (e) {
+      print("errorr$e");
+    }
+  }
 }

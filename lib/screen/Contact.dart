@@ -118,7 +118,9 @@ class _ContactState extends State<Contact> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(6)),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      StaticData.openWhatsAppChat();
+                    },
                     icon: Icon(
                       Icons.videocam_sharp,
                       color: Colors.black,
@@ -138,11 +140,13 @@ class _ContactState extends State<Contact> {
               Column(
                 children: [
                   ContactButton(
+                    ontap: () => StaticData.openEmailChat(),
                     icon: Icons.email,
                     text: 'saimArshad@gmail.com',
                   ),
                   const SizedBox(height: 10),
                   ContactButton(
+                    ontap: () => StaticData.openWhatsAppChat(),
                     icon: Icons.phone,
                     text: '+92 305 9895650',
                   ),
@@ -163,12 +167,12 @@ class _ContactState extends State<Contact> {
                                         Brightness.dark
                                     ? ThemeColor.textColor
                                     : Colors.black,
-                                width: 50,
+                                width: 40,
                                 height: 30,
                               ),
                               onPressed: () => StaticData.openURL(e.value.url),
                               highlightColor: Colors.white54,
-                              iconSize: 50,
+                              iconSize: 40,
                             ))
                         .toList(),
                   ),
@@ -297,7 +301,9 @@ class _ContactState extends State<Contact> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(6)),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      StaticData.openWhatsAppChat();
+                    },
                     icon: Icon(
                       Icons.videocam_sharp,
                       color: Colors.black,
@@ -317,11 +323,13 @@ class _ContactState extends State<Contact> {
               Column(
                 children: [
                   ContactButton(
+                    ontap: () => StaticData.openEmailChat(),
                     icon: Icons.email,
                     text: 'saimArshad@gmail.com',
                   ),
                   const SizedBox(height: 10),
                   ContactButton(
+                    ontap: () => StaticData.openWhatsAppChat(),
                     icon: Icons.phone,
                     text: '+92 305 9895650',
                   ),
@@ -644,7 +652,9 @@ class _ContactState extends State<Contact> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(6)),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      StaticData.openWhatsAppChat();
+                    },
                     icon: const Icon(Icons.video_call),
                     label: Text(
                       'Book a 30 mins session',
@@ -663,11 +673,13 @@ class _ContactState extends State<Contact> {
           Column(
             children: [
               ContactButton(
+                ontap: () => StaticData.openEmailChat(),
                 icon: Icons.email,
                 text: 'saimArshad@gmail.com',
               ),
               const SizedBox(height: 10),
               ContactButton(
+                ontap: () => StaticData.openWhatsAppChat(),
                 icon: Icons.phone,
                 text: '+92 305 9895650',
               ),

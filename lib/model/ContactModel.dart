@@ -9,9 +9,9 @@ class ContactModel {
     ContactModel(
         url: StringTheme.gitHub,
         icon: "https://img.icons8.com/ios-glyphs/60/000000/github.png"),
-    // ContactModel(
-    //     url: StringTheme.fiverr,
-    //     icon: "https://img.icons8.com/ios-filled/50/000000/fiverr.png"),
+    ContactModel(
+        url: StringTheme.fiverr,
+        icon: "https://img.icons8.com/ios-filled/50/000000/fiverr.png"),
     ContactModel(
         url: StringTheme.facebook,
         icon: "https://img.icons8.com/ios-filled/50/000000/facebook-new.png"),
@@ -28,9 +28,9 @@ class ContactModel {
     ContactModel(
         url: StringTheme.linkedin,
         icon: "https://img.icons8.com/ios-filled/50/000000/linkedin.png"),
-    // ContactModel(
-    //     url: StringTheme.upwork,
-    //     icon: "https://img.icons8.com/ios-filled/50/000000/upwork.png"),
+    ContactModel(
+        url: StringTheme.upwork,
+        icon: "https://img.icons8.com/ios-filled/50/000000/upwork.png"),
     ContactModel(
         url: StringTheme.instagram,
         icon: "https://img.icons8.com/glyph-neue/64/000000/instagram-new.png"),
