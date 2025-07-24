@@ -31,7 +31,7 @@ class MobileExperienceCard extends StatelessWidget {
         children: [
           // LEFT SIDE
           Expanded(
-            flex: 3,
+            flex: 5,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

@@ -13,15 +13,15 @@ class ProjectModel {
   });
   static List<ProjectModel> projectmodel = [
     ProjectModel(
-      banners: 'assets/imgs/geminichat.png',
+      banners: 'assets/imgs/superlaw.jpeg',
       icons: 'assets/imgs/flutter.png',
-      titles: ' Gemini Chat App',
+      titles: 'SLD Application',
       description:
           'This app Fully functional using flutter, source code is also available, check below.',
       links: 'https://github.com/MuhammadSaimArshad',
     ),
     ProjectModel(
-      banners: 'assets/imgs/onlinedoctor.png',
+      banners: 'assets/imgs/onlinedoctorapp.png',
       icons: 'assets/imgs/flutter.png',
       titles: ' Online Doctor Appointment App',
       description:
@@ -37,14 +37,6 @@ class ProjectModel {
       links: 'https://github.com/MuhammadSaimArshad',
     ),
     ProjectModel(
-      banners: 'assets/imgs/ecomerce.png',
-      icons: 'assets/imgs/flutter.png',
-      titles: 'Ecommerce App',
-      description:
-          'This app Fully functional using flutter, source code is also available, check below.',
-      links: 'https://github.com/MuhammadSaimArshad',
-    ),
-    ProjectModel(
       banners: 'assets/imgs/dating.png',
       icons: 'assets/imgs/flutter.png',
       titles: 'Dating App UI',
@@ -53,49 +45,9 @@ class ProjectModel {
       links: 'https://github.com/MuhammadSaimArshad',
     ),
     ProjectModel(
-      banners: 'assets/imgs/pfm.png',
-      icons: 'assets/imgs/flutter.png',
-      titles: 'Personal Finance Management App',
-      description:
-          'This app Fully functional using flutter, source code is also available, check below.',
-      links: 'https://github.com/MuhammadSaimArshad',
-    ),
-    ProjectModel(
-      banners: 'assets/imgs/novel.png',
-      icons: 'assets/imgs/flutter.png',
-      titles: 'Dating App UI',
-      description:
-          'This app Fully functional using flutter, source code is also available, check below.',
-      links: 'https://github.com/MuhammadSaimArshad',
-    ),
-    ProjectModel(
-      banners: 'assets/imgs/movieapp.png',
-      icons: 'assets/imgs/flutter.png',
-      titles: 'Movie App',
-      description:
-          'This app Fully functional using flutter, source code is also available, check below.',
-      links: 'https://github.com/MuhammadSaimArshad',
-    ),
-    ProjectModel(
       banners: 'assets/imgs/jobboard.png',
       icons: 'assets/imgs/flutter.png',
       titles: 'Job Board App',
-      description:
-          'This app Fully functional using flutter, source code is also available, check below.',
-      links: 'https://github.com/MuhammadSaimArshad',
-    ),
-    ProjectModel(
-      banners: 'assets/imgs/school.png',
-      icons: 'assets/imgs/flutter.png',
-      titles: 'School Management App',
-      description:
-          'This app Fully functional using flutter, source code is also available, check below.',
-      links: 'https://github.com/MuhammadSaimArshad',
-    ),
-    ProjectModel(
-      banners: 'assets/imgs/sldapp.png',
-      icons: 'assets/imgs/flutter.png',
-      titles: 'SLD Application',
       description:
           'This app Fully functional using flutter, source code is also available, check below.',
       links: 'https://github.com/MuhammadSaimArshad',
