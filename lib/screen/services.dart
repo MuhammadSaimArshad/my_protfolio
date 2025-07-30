@@ -403,7 +403,7 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
           ),
           mobile: Column(children: [
             SizedBox(
-              height: 30,
+              height: 40,
             ),
             SizedBox(
               height: 370,
@@ -446,7 +446,7 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
               ),
             ),
             SizedBox(
-              height: 190,
+              height: 500,
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -520,7 +520,6 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
             SizedBox(
               height: 30,
             ),
-            // 👈 Left Column: Images
             Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -578,7 +577,7 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
                         ]),
                         const SizedBox(height: 30),
                         Align(
-                          alignment: Alignment.centerRight,
+                          alignment: Alignment.center,
                           child: Image.asset(
                             'assets/imgs/vector_phone.png',
                             width: 300,

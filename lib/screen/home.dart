@@ -162,13 +162,17 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Space.y(2.w)!,
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const EntranceFader(
-                          offset: Offset(0, 0),
-                          delay: Duration(seconds: 1),
-                          duration: Duration(milliseconds: 800),
-                          child: ImageAnimations(),
+                        SizedBox(
+                          height: 200,
+                          width: 300,
+                          child: const EntranceFader(
+                            offset: Offset(0, 0),
+                            delay: Duration(seconds: 1),
+                            duration: Duration(milliseconds: 800),
+                            child: ImageAnimations(),
+                          ),
                         )
                       ],
                     ),

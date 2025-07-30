@@ -479,7 +479,7 @@ class _ContactState extends State<Contact> {
                   // Book Button
                   ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
-                      fixedSize: Size(width * 0.6, 40),
+                      fixedSize: Size(width * 0.7, 50),
                       foregroundColor: Colors.black,
                       backgroundColor: primaryColor,
                       padding: const EdgeInsets.symmetric(
