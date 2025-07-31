@@ -405,49 +405,6 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
             SizedBox(
               height: 40,
             ),
-            SizedBox(
-              height: 370,
-              width: double.infinity,
-              child: Wrap(
-                spacing: 10,
-                runSpacing: 10,
-                children: [
-                  ClipRRect(
-                    borderRadius:
-                        BorderRadius.circular(12), // 👈 set your desired radius
-                    child: Image.asset('assets/imgs/imag1.jpeg',
-                        width: 160, height: 190, fit: BoxFit.cover),
-                  ),
-                  ClipRRect(
-                    borderRadius:
-                        BorderRadius.circular(12), // 👈 set your desired radius
-                    child: Image.asset('assets/imgs/img 2.jpeg',
-                        width: 160, height: 190, fit: BoxFit.cover),
-                  ),
-                  ClipRRect(
-                    borderRadius:
-                        BorderRadius.circular(12), // 👈 set your desired radius
-                    child: Image.asset('assets/imgs/imag 3.jpeg',
-                        width: 120, height: 170, fit: BoxFit.cover),
-                  ),
-                  ClipRRect(
-                    borderRadius:
-                        BorderRadius.circular(12), // 👈 set your desired radius
-                    child: Image.asset('assets/imgs/imag 4.jpeg',
-                        width: 120, height: 170, fit: BoxFit.cover),
-                  ),
-                  ClipRRect(
-                    borderRadius:
-                        BorderRadius.circular(12), // 👈 set your desired radius
-                    child: Image.asset('assets/imgs/imag 5.jpeg',
-                        width: 320, height: 170, fit: BoxFit.cover),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 500,
-            ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -518,7 +475,50 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
               ],
             ),
             SizedBox(
-              height: 30,
+              height: 40,
+            ),
+            SizedBox(
+              height: 370,
+              width: double.infinity,
+              child: Wrap(
+                spacing: 10,
+                runSpacing: 10,
+                children: [
+                  ClipRRect(
+                    borderRadius:
+                        BorderRadius.circular(12), // 👈 set your desired radius
+                    child: Image.asset('assets/imgs/imag1.jpeg',
+                        width: 190, height: 190, fit: BoxFit.cover),
+                  ),
+                  ClipRRect(
+                    borderRadius:
+                        BorderRadius.circular(12), // 👈 set your desired radius
+                    child: Image.asset('assets/imgs/img 2.jpeg',
+                        width: 190, height: 190, fit: BoxFit.cover),
+                  ),
+                  ClipRRect(
+                    borderRadius:
+                        BorderRadius.circular(12), // 👈 set your desired radius
+                    child: Image.asset('assets/imgs/imag 3.jpeg',
+                        width: 200, height: 170, fit: BoxFit.cover),
+                  ),
+                  ClipRRect(
+                    borderRadius:
+                        BorderRadius.circular(12), // 👈 set your desired radius
+                    child: Image.asset('assets/imgs/imag 4.jpeg',
+                        width: 120, height: 170, fit: BoxFit.cover),
+                  ),
+                  ClipRRect(
+                    borderRadius:
+                        BorderRadius.circular(12), // 👈 set your desired radius
+                    child: Image.asset('assets/imgs/imag 5.jpeg',
+                        width: 320, height: 170, fit: BoxFit.cover),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 300,
             ),
             Row(
                 mainAxisAlignment: MainAxisAlignment.start,
