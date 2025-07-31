@@ -70,74 +70,6 @@ class _ProjectsState extends State<Projects> {
                       .toList(),
                 ),
                 Space.y(3.w)!,
-                // OutlinedButton(
-                //   style: OutlinedButton.styleFrom(
-                //     side: BorderSide(
-                //       color: isHover ? whiteColor : ThemeColor.textColor,
-                //       width: 2,
-                //     ),
-                //     shape: RoundedRectangleBorder(
-                //       borderRadius: BorderRadius.circular(6),
-                //     ),
-                //   ),
-                //   onHover: (value) {
-                //     setState(() {
-                //       isHover = value;
-                //     });
-                //   },
-                //   onPressed: () => StaticData.openURL(StringTheme.gitHub),
-                //   child: Padding(
-                //     padding: EdgeInsets.all(8.0),
-                //     child: Text(
-                //       'See More',
-                //       style: TextStyle(
-                //         fontSize: 20,
-                //         fontWeight: FontWeight.bold,
-                //         color: isHover ? whiteColor : ThemeColor.textColor,
-                //       ),
-                //     ),
-                //   ),
-                // )
-                // OutlinedButton(
-                //   style: ButtonStyle(
-                //     side: MaterialStateProperty.resolveWith((states) {
-                //       if (states.contains(MaterialState.hovered)) {
-                //         return BorderSide(color: whiteColor, width: 2);
-                //       }
-                //       return BorderSide(color: ThemeColor.textColor, width: 2);
-                //     }),
-                //     backgroundColor:
-                //         MaterialStateProperty.resolveWith((states) {
-                //       if (states.contains(MaterialState.pressed)) {
-                //         return Color(0xFF09FBD4);
-                //         // Change this to your tap color
-                //       }
-                //       return Colors.transparent;
-                //     }),
-                //     shape: MaterialStateProperty.all(
-                //       RoundedRectangleBorder(
-                //         borderRadius: BorderRadius.circular(6),
-                //       ),
-                //     ),
-                //   ),
-                //   onHover: (value) {
-                //     setState(() {
-                //       isHover = value;
-                //     });
-                //   },
-                //   onPressed: () => StaticData.openURL(StringTheme.gitHub),
-                //   child: Padding(
-                //     padding: const EdgeInsets.all(8.0),
-                //     child: Text(
-                //       'See More',
-                //       style: TextStyle(
-                //         fontSize: 20,
-                //         fontWeight: FontWeight.bold,
-                //         color: isHover ? whiteColor : ThemeColor.textColor,
-                //       ),
-                //     ),
-                //   ),
-                // )
                 SizedBox(
                   height: 7.h,
                   width: 12.w,
@@ -181,7 +113,7 @@ class _ProjectsState extends State<Projects> {
                   ),
                 ),
               ),
-              Space.y(5.w)!,
+              Space.y(6.w)!,
               CarouselSlider.builder(
                 itemCount: ProjectModel.projectmodel.length,
                 itemBuilder: (BuildContext context, int itemIndex, int i) =>

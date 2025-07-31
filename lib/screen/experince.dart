@@ -284,11 +284,10 @@ class _ExperinceState extends State<Experince> {
             color: Theme.of(context).brightness == Brightness.dark
                 ? bgColor
                 : Colors.white,
-            padding: const EdgeInsets.symmetric(vertical: 60),
+            padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 13),
             width: double.infinity,
             child: Column(
               children: [
-                // Heading
                 Text(
                   "Experience",
                   style: GoogleFonts.inter(
@@ -298,13 +297,15 @@ class _ExperinceState extends State<Experince> {
                   ),
                 ),
                 const SizedBox(height: 10),
-                Text(
-                  "Reflection of what I’ve been doing so far, so long.",
-                  style: GoogleFonts.inter(
-                    fontSize: 14,
-                    color: Theme.of(context).brightness == Brightness.dark
-                        ? Colors.white70
-                        : Colors.grey,
+                Expanded(
+                  child: Text(
+                    "Reflection of what I’ve been doing so far, so long.",
+                    style: GoogleFonts.inter(
+                      fontSize: 14,
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white70
+                          : Colors.grey,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 50),
@@ -326,7 +327,6 @@ class _ExperinceState extends State<Experince> {
                   ),
                 ),
                 SizedBox(height: 20),
-
                 MobileExperienceCard(
                   data: ExperienceModel(
                     company: "IT SOLERA (PVT) LTD",

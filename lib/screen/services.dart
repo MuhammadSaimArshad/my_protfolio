@@ -580,8 +580,7 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
                           alignment: Alignment.center,
                           child: Image.asset(
                             'assets/imgs/vector_phone.png',
-                            width: 300,
-                            fit: BoxFit.contain,
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ],
