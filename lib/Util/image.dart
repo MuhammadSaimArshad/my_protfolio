@@ -21,3 +21,18 @@ class StaticImage {
   static const darkIcon =
       "https://img.icons8.com/external-glyphons-amoghdesign/64/000000/external-moon-weather-vol-01-glyphons-amoghdesign.png";
 }
+
+class MyPhototModel {
+  String? img;
+
+  MyPhototModel({
+    this.img,
+  });
+}
+
+List<MyPhototModel> myimagList = [
+  MyPhototModel(img: "assets/imgs/imag1.jpeg"),
+  MyPhototModel(img: "assets/imgs/img 2.jpeg"),
+  MyPhototModel(img: "assets/imgs/imag 3.jpeg"),
+  MyPhototModel(img: "assets/imgs/imag 5.jpeg"),
+];

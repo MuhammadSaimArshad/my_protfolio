@@ -160,19 +160,20 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
-                    Space.y(2.w)!,
+                    SizedBox(
+                      height: 15,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SizedBox(
+                        Container(
                           height: 200,
                           width: 300,
-                          child: const EntranceFader(
-                            offset: Offset(0, 0),
-                            delay: Duration(seconds: 1),
-                            duration: Duration(milliseconds: 800),
-                            child: ImageAnimations(),
-                          ),
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                  image: AssetImage("assets/imgs/mypic.png"),
+                                  fit: BoxFit.contain)),
                         )
                       ],
                     ),
