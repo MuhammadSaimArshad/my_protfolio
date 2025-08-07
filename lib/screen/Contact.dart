@@ -479,7 +479,7 @@ class _ContactState extends State<Contact> {
                   // Book Button
                   ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
-                      fixedSize: Size(width * 0.72, 50),
+                      minimumSize: Size(300, 50),
                       foregroundColor: Colors.black,
                       backgroundColor: primaryColor,
                       padding: const EdgeInsets.symmetric(
@@ -498,10 +498,6 @@ class _ContactState extends State<Contact> {
                   ),
                 ],
               ),
-
-              const SizedBox(width: 20),
-
-              // Contact Info
             ],
           ),
           const SizedBox(height: 20),

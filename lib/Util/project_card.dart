@@ -80,7 +80,7 @@ class ProjectCardState extends State<ProjectCard> {
               duration: const Duration(milliseconds: 400),
               opacity: isHover ? 0.1 : 1.0,
               child: Container(
-                width: Responsive.isDesktop(context) ? 50.w : 70.w,
+                width: Responsive.isDesktop(context) ? 50.w : 85.w,
                 height: 36.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),

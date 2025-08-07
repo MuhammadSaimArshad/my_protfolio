@@ -403,182 +403,179 @@ Known for my adaptability, attention to detail, and user-focused mindset, I thri
               ),
             ],
           ),
-          mobile: Column(children: [
-            SizedBox(
-              height: 40,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'About Me',
-                  style: TextStyle(
-                      color: primaryColor,
-                      fontSize: 22,
-                      fontWeight: FontWeight.w700),
-                ),
-                const SizedBox(height: 20),
-                const Text(
-                  'Hello Jee! My name is Saim ',
-                  style: TextStyle(fontSize: 38, fontWeight: FontWeight.w600),
-                ),
-                const SizedBox(height: 20),
-                const Text(
-                  '"If you are not going to tell the world who you are,   the world is not going to tell you how good you are."',
-                  style: TextStyle(
-                      color: Colors.grey, fontStyle: FontStyle.italic),
-                ),
-                const SizedBox(height: 20),
-                // Gap(20),
-                const Text(
-                  '''
-            I'm a dedicated Flutter Developer with over 2 years of experience crafting high-performance, visually appealing mobile apps for Android and iOS. With a background in Software Engineering, I specialize in cross-platform development using Flutter and Dart, ensuring smooth and scalable solutions for businesses and users alike.
-                          
-            My expertise spans UI/UX design implementation, state management (GetX, Provider), Firebase, and RESTful APIs, along with proficiency in Git, CI/CD, and app store deployment. I've worked on diverse apps, including e-commerce platforms, on-demand services, and real-time chat systems.
-                          
-            What drives me is building apps that offer value, look great, and work flawlessly. I focus on writing clean, maintainable code and collaborating effectively with design and backend teams to bring ideas to life.
-                          
-            Known for my adaptability, attention to detail, and user-focused mindset, I thrive in fast-paced environments and continuously stay updated with Flutter innovations.
-                          ''',
-                  textAlign: TextAlign.justify,
-                  style: TextStyle(height: 1.6, fontSize: 15),
-                ),
-
-                ElevatedButton.icon(
-                  onPressed: () {
-                    downloadresume();
-                  },
-                  icon: Icon(
-                    Icons.download,
-                    color: Colors.white,
-                  ),
-                  label: Text(
-                    "Download Resume",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: primaryColor,
-                    padding: EdgeInsets.symmetric(horizontal: 25, vertical: 19),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
+          mobile: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 40),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'About Me',
+                      style: TextStyle(
+                          color: primaryColor,
+                          fontSize: 22,
+                          fontWeight: FontWeight.w700),
                     ),
-                    elevation: 2,
-                  ),
-                ),
-              ],
+                    const SizedBox(height: 20),
+                    const Text(
+                      'Hello Jee! My name is Saim ',
+                      style:
+                          TextStyle(fontSize: 38, fontWeight: FontWeight.w600),
+                    ),
+                    const SizedBox(height: 20),
+                    const Text(
+                      '"If you are not going to tell the world who you are,   the world is not going to tell you how good you are."',
+                      style: TextStyle(
+                          color: Colors.grey, fontStyle: FontStyle.italic),
+                    ),
+                    const SizedBox(height: 20),
+                    // Gap(20),
+                    const Text(
+                      '''
+                                I'm a dedicated Flutter Developer with over 2 years of experience crafting high-performance, visually appealing mobile apps for Android and iOS. With a background in Software Engineering, I specialize in cross-platform development using Flutter and Dart, ensuring smooth and scalable solutions for businesses and users alike.
+                          
+                                My expertise spans UI/UX design implementation, state management (GetX, Provider), Firebase, and RESTful APIs, along with proficiency in Git, CI/CD, and app store deployment. I've worked on diverse apps, including e-commerce platforms, on-demand services, and real-time chat systems.
+                          
+                                What drives me is building apps that offer value, look great, and work flawlessly. I focus on writing clean, maintainable code and collaborating effectively with design and backend teams to bring ideas to life.
+                          
+                                Known for my adaptability, attention to detail, and user-focused mindset, I thrive in fast-paced environments and continuously stay updated with Flutter innovations.
+                          ''',
+                      textAlign: TextAlign.justify,
+                      style: TextStyle(
+                        fontSize: 15,
+                      ),
+                    ),
+
+                    ElevatedButton.icon(
+                      onPressed: () {
+                        downloadresume();
+                      },
+                      icon: Icon(
+                        Icons.download,
+                        color: Colors.white,
+                      ),
+                      label: Text(
+                        "Download Resume",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: primaryColor,
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 25, vertical: 19),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        elevation: 2,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    StaggeredGrid.count(
+                      crossAxisCount: 4,
+                      mainAxisSpacing: 4,
+                      crossAxisSpacing: 4,
+                      children: [
+                        StaggeredGridTile.count(
+                          crossAxisCellCount: 2,
+                          mainAxisCellCount: 2,
+                          child: ImageTile(
+                            index: 0,
+                            width: 200,
+                            height: 100,
+                          ),
+                        ),
+                        StaggeredGridTile.count(
+                          crossAxisCellCount: 2,
+                          mainAxisCellCount: 2,
+                          child: ImageTile(
+                            index: 1,
+                            width: 200,
+                            height: 100,
+                          ),
+                        ),
+                        StaggeredGridTile.count(
+                          crossAxisCellCount: 4,
+                          mainAxisCellCount: 2,
+                          child: ImageTile(
+                            index: 2,
+                            width: 200,
+                            height: 100,
+                          ),
+                        ),
+                        StaggeredGridTile.count(
+                          crossAxisCellCount: 4,
+                          mainAxisCellCount: 2,
+                          child: ImageTile(
+                            index: 3,
+                            width: 200,
+                            height: 100,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 60,
+                    ),
+                    Text(
+                      'Tech Stack',
+                      style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                        color: primaryColor,
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    Text(
+                      'Change is inevitable, so I keep on exploring new technology, learn'
+                      'it in a minimal possible way and then build something out of it to'
+                      'see how well I did :)',
+                      textAlign: TextAlign.justify,
+                      maxLines: 6,
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    const SizedBox(height: 30),
+                    buildCategory("Mobile development", [
+                      buildTechChip("Flutter", Icons.flutter_dash),
+                      buildTechChip("Dart", Icons.code),
+                    ]),
+                    buildCategory("Web development", [
+                      buildTechChip("HTML 5", Icons.language),
+                      buildTechChip("CSS 3", Icons.style),
+                    ]),
+                    buildCategory("Server side", [
+                      // buildTechChip("Flask Restful", Icons.science),
+                      // buildTechChip("Node.js", Icons.memory),
+                      // buildTechChip("Express.js", Icons.merge_type),
+                      buildTechChip("REST APIs", Icons.api),
+                    ]),
+                    buildCategory("Databases", [
+                      buildTechChip("Firebase", Icons.cloud),
+                      buildTechChip("SQLite", Icons.storage),
+                      // buildTechChip("Postgres SQL", Icons.dataset_linked),
+                    ]),
+                    buildCategory("Version controlling & management", [
+                      buildTechChip("GitHub", Icons.code_off),
+                      buildTechChip("Git", Icons.code),
+                      // buildTechChip("Notion", Icons.note),
+                    ]),
+                    buildCategory("UI/UX Design", [
+                      buildTechChip("Figma", Icons.design_services),
+                      buildTechChip("Adobe XD", Icons.brush),
+                    ]),
+                    const SizedBox(height: 30),
+                    Center(
+                      child: Image.asset(
+                        'assets/imgs/vector_phone.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ]),
             ),
-            SizedBox(
-              height: 40,
-            ),
-            StaggeredGrid.count(
-              crossAxisCount: 4,
-              mainAxisSpacing: 4,
-              crossAxisSpacing: 4,
-              children: [
-                StaggeredGridTile.count(
-                  crossAxisCellCount: 2,
-                  mainAxisCellCount: 2,
-                  child: ImageTile(
-                    index: 0,
-                    width: 200,
-                    height: 100,
-                  ),
-                ),
-                StaggeredGridTile.count(
-                  crossAxisCellCount: 2,
-                  mainAxisCellCount: 2,
-                  child: ImageTile(
-                    index: 1,
-                    width: 200,
-                    height: 100,
-                  ),
-                ),
-                StaggeredGridTile.count(
-                  crossAxisCellCount: 4,
-                  mainAxisCellCount: 2,
-                  child: ImageTile(
-                    index: 2,
-                    width: 200,
-                    height: 100,
-                  ),
-                ),
-                StaggeredGridTile.count(
-                  crossAxisCellCount: 4,
-                  mainAxisCellCount: 2,
-                  child: ImageTile(
-                    index: 3,
-                    width: 200,
-                    height: 100,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 60,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Tech Stack',
-                  style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                    color: primaryColor,
-                  ),
-                ),
-                const SizedBox(height: 12),
-                Text(
-                  'Change is inevitable, so I keep on exploring new technology, learn'
-                  'it in a minimal possible way and then build something out of it to'
-                  'see how well I did :)',
-                  textAlign: TextAlign.justify,
-                  maxLines: 6,
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.grey,
-                  ),
-                ),
-                const SizedBox(height: 30),
-                buildCategory("Mobile development", [
-                  buildTechChip("Flutter", Icons.flutter_dash),
-                  buildTechChip("Dart", Icons.code),
-                ]),
-                buildCategory("Web development", [
-                  buildTechChip("HTML 5", Icons.language),
-                  buildTechChip("CSS 3", Icons.style),
-                ]),
-                buildCategory("Server side", [
-                  // buildTechChip("Flask Restful", Icons.science),
-                  // buildTechChip("Node.js", Icons.memory),
-                  // buildTechChip("Express.js", Icons.merge_type),
-                  buildTechChip("REST APIs", Icons.api),
-                ]),
-                buildCategory("Databases", [
-                  buildTechChip("Firebase", Icons.cloud),
-                  buildTechChip("SQLite", Icons.storage),
-                  // buildTechChip("Postgres SQL", Icons.dataset_linked),
-                ]),
-                buildCategory("Version controlling & management", [
-                  buildTechChip("GitHub", Icons.code_off),
-                  buildTechChip("Git", Icons.code),
-                  // buildTechChip("Notion", Icons.note),
-                ]),
-                buildCategory("UI/UX Design", [
-                  buildTechChip("Figma", Icons.design_services),
-                  buildTechChip("Adobe XD", Icons.brush),
-                ]),
-                const SizedBox(height: 30),
-                Align(
-                  alignment: Alignment.center,
-                  child: Image.asset(
-                    'assets/imgs/vector_phone.png',
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ],
-            ),
-          ]),
+          ),
         ));
   }
 

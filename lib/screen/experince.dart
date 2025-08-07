@@ -284,7 +284,7 @@ class _ExperinceState extends State<Experince> {
             color: Theme.of(context).brightness == Brightness.dark
                 ? bgColor
                 : Colors.white,
-            padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 13),
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 13),
             width: double.infinity,
             child: Column(
               children: [
@@ -297,15 +297,14 @@ class _ExperinceState extends State<Experince> {
                   ),
                 ),
                 const SizedBox(height: 10),
-                Expanded(
-                  child: Text(
-                    "Reflection of what I’ve been doing so far, so long.",
-                    style: GoogleFonts.inter(
-                      fontSize: 14,
-                      color: Theme.of(context).brightness == Brightness.dark
-                          ? Colors.white70
-                          : Colors.grey,
-                    ),
+                Text(
+                  "Reflection of what I’ve been doing so far, so long.",
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.inter(
+                    fontSize: 14,
+                    color: Theme.of(context).brightness == Brightness.dark
+                        ? Colors.white70
+                        : Colors.grey,
                   ),
                 ),
                 const SizedBox(height: 50),
